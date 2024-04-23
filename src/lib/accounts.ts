@@ -1,7 +1,24 @@
-import * as oauth from 'oauth';
-import { Account, BalanceResponse, parseBalanceResponseXmlToJson, parseEtradeXmlAccountList, parsePortfolioResponseXmlToJson, PortfolioResponse } from './account-helper.js';
 import { configDotenv } from "dotenv"
+import * as oauth from 'oauth';
+import util from "node:util";
+import dayjs from "dayjs";
+
+import {
+    Account,
+    BalanceResponse,
+    Order,
+    parseBalanceResponseXmlToJson,
+    parseEtradeXmlAccountList,
+    parseOrdersResponseXmlToJson,
+    parsePortfolioResponseXmlToJson,
+    PortfolioResponse
+} from './account-helper.js';
 import pf from './portfolio.js';
+import prepareMessage from "../utils/message.js";
+import tts from "../services/tts.js";
+import { sendEmail } from "../services/mail.js";
+import { Parser } from "xml2js";
+
 configDotenv();
 
 // prod keys
@@ -16,6 +33,11 @@ const oauthClient = new oauth.OAuth(
     'oob', // Out-of-band for manual code grant
     'HMAC-SHA1'
 );
+
+interface Holdings {
+    symbol: string,
+    daysGain: number
+}
 
 export class EtradeAccount {
     private accessToken: string;
@@ -79,6 +101,33 @@ export class EtradeAccount {
     }
 
 
+    async listOrders(accountIdKey: string): Promise<Order> {
+        return new Promise((resolve, reject) => {
+            oauthClient.get(
+                `https://api.etrade.com/v1/accounts/${accountIdKey}/orders?fromDate=${dayjs().subtract(1, 'day').format('MMDDYYYY')}&toDate=${dayjs().format('MMDDYYYY')}`,
+                this.accessToken,
+                this.accessTokenSecret,
+                async (err, result, response) => {
+                    if (err) {
+                        console.log("\nFailed to get orders list");
+                        console.error(err);
+                        reject(err);
+                    } else {
+                        try {
+                            const orders = await parseOrdersResponseXmlToJson(result as string);
+                            // console.log(util.inspect(orders, true, null, true));
+                            resolve(orders);
+                        } catch (parseError) {
+                            console.error("\nError parsing order list", parseError);
+                            reject(parseError);
+                        }
+                    }
+                }
+            );
+        });
+    }
+
+
     getPortfolio(accountIdKey: string): Promise<PortfolioResponse | null> {
         return new Promise((resolve, reject) => {
             oauthClient.get(
@@ -120,14 +169,22 @@ export class EtradeAccount {
     }
 
 
-    async getDataFromAccount(accounts: Account[]): Promise<any> {
+    async constructPortfolio(accounts: Account[]): Promise<void> {
         const promises: BalanceResponse[] = [];
+        console.log(accounts);
+        console.log(accounts.length);
+
         for (const account of accounts) {
             promises.push(await this.getAccountBalances(account.accountIdKey, account.institutionType));
         }
         const balances = await Promise.all(promises);
+        console.log(util.inspect(balances, true, null, true));
+
 
         const retirementAccountType = ['ROTHIRA', 'ROLLOVERIRA'];
+
+        pf.day = dayjs().format('dddd');
+        pf.date = dayjs().format('YYYY-MM-DD');
 
         console.log("Calculating total cash...");
         let totalCash: number = 0;
@@ -148,15 +205,77 @@ export class EtradeAccount {
         pf.nonRetirementAccounts = accounts.length - pf.retirementAccounts;
 
         let totalInvestedAmount: number = 0;
+        let daysGain = 0;
+        let holdings: Holdings[] = [];
+
+        let gaintest = []
+
         console.log("Calculating total invested amount...");
         for (const account of accounts) {
+            console.log(`Calculating positions for ${account.accountIdKey}`);
+
             const pfr = await this.getPortfolio(account.accountIdKey);
             if (pfr) {
-                pfr.PortfolioResponse.Position.forEach(p => totalInvestedAmount += parseFloat(p.marketValue))
+                pfr.PortfolioResponse.Position.forEach(p => {
+                    totalInvestedAmount += parseFloat(p.marketValue)
+                    daysGain += parseFloat(p.daysGain)
+
+                    gaintest.push({
+                        symbol: p.Product.symbol,
+                        gain: parseFloat(p.daysGain)
+                    });
+
+                    holdings.push({
+                        symbol: p.Product.symbol,
+                        daysGain: parseFloat(p.daysGain)
+                    });
+
+                    pf.todaysUpdate.anualGain.amount += parseFloat(p.totalGain);
+                    if (p.positionType == 'SHORT') pf.todaysUpdate.anualGain.shortTerm += parseFloat(p.totalGain);
+                    if (p.positionType == 'LONG') pf.todaysUpdate.anualGain.longTerm += parseFloat(p.totalGain);
+
+                    // if want to see the daily gains, we'll have to store the gains in db
+                    // we can't save is unless we use db, it can be postgres, mongodb or sqlite also.
+                })
             }
+            // round amounts after finalization
+            pf.todaysUpdate.anualGain.amount = Math.round(pf.todaysUpdate.anualGain.amount);
+            pf.todaysUpdate.anualGain.shortTerm = Math.round(pf.todaysUpdate.anualGain.shortTerm);
+            pf.todaysUpdate.anualGain.longTerm = Math.round(pf.todaysUpdate.anualGain.longTerm);
+
+            // let res = await this.listOrders(account.accountIdKey);
+            // console.log(res);
+            // return;
+            // if (res && res.OrdersResponse.Order.length > 0) {
+            //     const orders = res.OrdersResponse.Order;
+            //     orders.forEach(odr => {
+            //         pf.todaysUpdate.orders.total += 1;
+            //         if (odr.OrderDetail[0].status === 'EXPIRED') pf.todaysUpdate.orders.expired += 1;
+            //         if (odr.OrderDetail[0].status === 'CANCELLED') pf.todaysUpdate.orders.cancelled += 1;
+            //         if (odr.OrderDetail[0].status === 'EXECUTED') pf.todaysUpdate.orders.filled += 1;
+            //     })
+            // }
         }
+
         pf.investedAmount = Math.round(totalInvestedAmount);
-        console.log("\nUpdated portfolio:", pf);
+        pf.todaysUpdate.daysGain = Math.round(daysGain);
+
+        // total gain or loss
+        // toppers and losers
+        holdings.sort((a, b) => b.daysGain - a.daysGain);
+        console.log(holdings);
+
+        for (let i = 0; i < 3; i++) {
+            if (holdings[i].symbol) pf.todaysUpdate.top3Gainers.push(holdings[i].symbol);
+        }
+        holdings.reverse();
+        console.log(holdings);
+
+        for (let i = 0; i < 3; i++) {
+            if (holdings[i].symbol) pf.todaysUpdate.top3Losers.push(holdings[i].symbol);
+        }
+
+        console.log(util.inspect(gaintest, true, null, true));
     }
 }
 
@@ -166,9 +285,20 @@ export class EtradeAccount {
     try {
         const accounts = await et.listAccounts();
         if (accounts && accounts.length > 0) {
-            const data = await et.getDataFromAccount(accounts);
+            await et.constructPortfolio(accounts);
+            await et.listOrders(accounts[0].accountIdKey);
+            console.log(pf);
+
+            // const message = prepareMessage(pf);
+            // const audioMessagePath = await tts(message);
+            // await sendEmail(
+            //     "iampawanmkr@gmail.com", // dhaval_p_shah@yahoo.com
+            //     "E*Trade Daily Updates",
+            //     "Please listen to the audio for details.",
+            //     audioMessagePath
+            // );
         }
     } catch (error) {
-        console.error("An error occurred:", error);
+        console.error(error);
     }
 })();

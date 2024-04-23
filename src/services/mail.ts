@@ -1,7 +1,10 @@
 import * as nodemailer from 'nodemailer';
+import { configDotenv } from "dotenv";
 
+configDotenv();
 
-export async function sendEmailWithWAVAttachment(
+export async function sendEmail(
+    receiver: string,
     subject: string,
     body: string,
     attachmentPath: string
@@ -11,9 +14,7 @@ export async function sendEmailWithWAVAttachment(
         throw new Error('Attachment must be a WAV file.');
     }
 
-    // Create a Nodemailer transport using your preferred email service configuration
     const transporter = nodemailer.createTransport({
-        // Replace with your SMTP server details
         host: 'smtp.zoho.in',
         port: 465,
         secure: true,
@@ -26,7 +27,7 @@ export async function sendEmailWithWAVAttachment(
     // Send the email
     const mailOptions = {
         from: 'informme@zohomail.in',
-        to: 'iampawanmkr@gmail.com',
+        to: receiver,
         subject: subject,
         text: body,
         // html: body,

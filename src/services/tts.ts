@@ -3,12 +3,11 @@ import sdk from 'microsoft-cognitiveservices-speech-sdk';
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { sendEmailWithWAVAttachment } from './mail.js';
 
 const speechConfig = sdk.SpeechConfig.fromSubscription(process.env.SPEECH_KEY, process.env.SPEECH_REGION);
 speechConfig.speechRecognitionLanguage = "en-US";
 
-export default async function tts(text: string) {
+export default async function tts(text: string): Promise<string> {
     const outputPath = path.join(process.cwd(), 'jenny.wav');
     const audioConfig = sdk.AudioConfig.fromAudioFileOutput(outputPath);
 
@@ -39,10 +38,3 @@ export default async function tts(text: string) {
         synthesizer = null;
     }
 };
-
-(async function () {
-    await tts("Dear Customer, This email is from unofficial E-trade API integrated app which provides your daily updates on Investements. But this particular mail is just for testing purpose. talking about project updates, as you can see mail and text-to-speech service are already in action. very soon you'll be presented with a skeleton project. Thanks for listening, have a gread day.");
-
-    const audiofilepath = path.join(process.cwd(), "jenny.wav");
-    await sendEmailWithWAVAttachment("Audio and Email Testing", "Hi Dhaval, I hope you are doing good. Checkout the implementation and recent progress, I hope you will like it.", audiofilepath);
-})();

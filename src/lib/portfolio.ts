@@ -1,4 +1,4 @@
-interface Portfolio {
+export interface Portfolio {
     day: string;
     date: string;
     totalAccounts: number;
@@ -11,7 +11,7 @@ interface Portfolio {
 }
 
 interface TodaysUpdate {
-    gainOrLoss: string;
+    daysGain: number;
     top3Gainers: string[];
     top3Losers: string[];
     anualGain: AnualGain;
@@ -51,7 +51,7 @@ const pf: Portfolio = {
     investedAmount: 0,
     cashReserveAmount: 0,
     todaysUpdate: {
-        gainOrLoss: "",
+        daysGain: 0,
         top3Gainers: [],
         top3Losers: [],
         anualGain: {

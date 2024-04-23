@@ -1,0 +1,216 @@
+{
+    OrdersResponse: {
+      Order: [
+            {
+          orderId: [ '53',
+                    [length
+                    ]: 1
+                ],
+          details: [
+            'https: //api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/orders/53',
+                    [length
+                    ]: 1
+                ],
+          orderType: [ 'BUY_WRITES',
+                    [length
+                    ]: 1
+                ],
+          OrderDetail: [
+                    {
+              placedTime: [ '1713815780765',
+                            [length
+                            ]: 1
+                        ],
+              executedTime: [ '124109896',
+                            [length
+                            ]: 1
+                        ],
+              orderValue: [ '2776.0922',
+                            [length
+                            ]: 1
+                        ],
+              status: [ 'EXPIRED',
+                            [length
+                            ]: 1
+                        ],
+              orderTerm: [ 'GOOD_FOR_DAY',
+                            [length
+                            ]: 1
+                        ],
+              priceType: [ 'NET_DEBIT',
+                            [length
+                            ]: 1
+                        ],
+              limitPrice: [ '9.25',
+                            [length
+                            ]: 1
+                        ],
+              stopPrice: [ '0',
+                            [length
+                            ]: 1
+                        ],
+              marketSession: [ 'REGULAR',
+                            [length
+                            ]: 1
+                        ],
+              allOrNone: [ 'false',
+                            [length
+                            ]: 1
+                        ],
+              Instrument: [
+                            {
+                  Product: [
+                                    {
+                      symbol: [ 'BGS',
+                                            [length
+                                            ]: 1
+                                        ],
+                      securityType: [ 'EQ',
+                                            [length
+                                            ]: 1
+                                        ]
+                                    },
+                                    [length
+                                    ]: 1
+                                ],
+                  symbolDescription: [ 'B & G FOODS INC NEW COM',
+                                    [length
+                                    ]: 1
+                                ],
+                  orderAction: [ 'BUY',
+                                    [length
+                                    ]: 1
+                                ],
+                  quantityType: [ 'QUANTITY',
+                                    [length
+                                    ]: 1
+                                ],
+                  orderedQuantity: [ '300',
+                                    [length
+                                    ]: 1
+                                ],
+                  filledQuantity: [ '0.0',
+                                    [length
+                                    ]: 1
+                                ],
+                  estimatedCommission: [ '0.0',
+                                    [length
+                                    ]: 1
+                                ],
+                  estimatedFees: [ '0.0',
+                                    [length
+                                    ]: 1
+                                ]
+                            },
+                            {
+                  Product: [
+                                    {
+                      symbol: [ 'BGS',
+                                            [length
+                                            ]: 1
+                                        ],
+                      securityType: [ 'OPTN',
+                                            [length
+                                            ]: 1
+                                        ],
+                      callPut: [ 'CALL',
+                                            [length
+                                            ]: 1
+                                        ],
+                      expiryYear: [ '2025',
+                                            [length
+                                            ]: 1
+                                        ],
+                      expiryMonth: [ '1',
+                                            [length
+                                            ]: 1
+                                        ],
+                      expiryDay: [ '17',
+                                            [length
+                                            ]: 1
+                                        ],
+                      strikePrice: [ '11',
+                                            [length
+                                            ]: 1
+                                        ],
+                      productId: [
+                                            {
+                          symbol: [ 'BGS---250117C00011000',
+                                                    [length
+                                                    ]: 1
+                                                ],
+                          typeCode: [ 'OPTION',
+                                                    [length
+                                                    ]: 1
+                                                ]
+                                            },
+                                            [length
+                                            ]: 1
+                                        ]
+                                    },
+                                    [length
+                                    ]: 1
+                                ],
+                  symbolDescription: [
+                                    "BGS Jan 17 '25 $11 Call",
+                                    [length
+                                    ]: 1
+                                ],
+                  orderAction: [ 'SELL_OPEN',
+                                    [length
+                                    ]: 1
+                                ],
+                  quantityType: [ 'QUANTITY',
+                                    [length
+                                    ]: 1
+                                ],
+                  orderedQuantity: [ '3',
+                                    [length
+                                    ]: 1
+                                ],
+                  filledQuantity: [ '0.0',
+                                    [length
+                                    ]: 1
+                                ],
+                  estimatedCommission: [ '1.0922',
+                                    [length
+                                    ]: 1
+                                ],
+                  estimatedFees: [ '0.0',
+                                    [length
+                                    ]: 1
+                                ]
+                            },
+                            [length
+                            ]: 2
+                        ],
+              netPrice: [ '0',
+                            [length
+                            ]: 1
+                        ],
+              netBid: [ '0',
+                            [length
+                            ]: 1
+                        ],
+              netAsk: [ '0',
+                            [length
+                            ]: 1
+                        ],
+              gcd: [ '0',
+                            [length
+                            ]: 1
+                        ],
+              ratio: [ '',
+                            [length
+                            ]: 1
+                        ]
+                    },
+                    [length
+                    ]: 1
+                ]
+            },
+            [length
+            ]: 1
+        ]
+    }
+}

@@ -125,17 +125,17 @@ export async function parseBalanceResponseXmlToJson(xmlData: string): Promise<Ba
 
 
 interface Product {
-    expiryDay: string;
-    expiryMonth: string;
-    expiryYear: string;
-    productId: {
+    symbol: string;
+    securityType: string;
+    callPut?: string;
+    expiryYear?: string;
+    expiryMonth?: string;
+    expiryDay?: string;
+    strikePrice?: string;
+    productId?: {
         symbol: string;
         typeCode: string;
-    };
-    securitySubType: string;
-    securityType: string;
-    strikePrice: string;
-    symbol: string;
+    }[];
 }
 
 interface Quick {
@@ -253,6 +253,117 @@ export function parsePortfolioResponseXmlToJson(xmlData: string): Promise<Portfo
                     console.error("\nError parsing protfolio", parseError);
                     reject(parseError);
                 }
+            }
+        });
+    });
+}
+
+
+interface Instrument {
+    Product: Product[];
+    symbolDescription: string;
+    orderAction: string;
+    quantityType: string;
+    orderedQuantity: string;
+    filledQuantity: string;
+    estimatedCommission: string;
+    estimatedFees: string;
+}
+
+interface OrderDetail {
+    placedTime: string;
+    executedTime: string;
+    orderValue: string;
+    status: string;
+    orderTerm: string;
+    priceType: string;
+    limitPrice: string;
+    stopPrice: string;
+    marketSession: string;
+    allOrNone: string;
+    Instrument: Instrument[];
+    netPrice: string;
+    netBid: string;
+    netAsk: string;
+    gcd: string;
+    ratio: string;
+}
+
+export interface Order {
+    orderId: string;
+    details: string;
+    orderType: string;
+    OrderDetail: OrderDetail[];
+}
+
+interface OrdersResponse {
+    OrdersResponse: {
+        Order: Order[];
+    };
+}
+
+export async function parseOrdersResponseXmlToJson(xmlData: string): Promise<Order> {
+    const parser = new Parser();
+    return new Promise((resolve, reject) => {
+        parser.parseString(xmlData, (err, result) => {
+            if (err) {
+                reject(err);
+            } else {
+                const orders = result.OrdersResponse.Order.map((order: any) => {
+                    return {
+                        orderId: order.orderId[0],
+                        details: order.details[0],
+                        orderType: order.orderType[0],
+                        OrderDetail: order.OrderDetail.map((detail: any) => {
+                            return {
+                                placedTime: detail.placedTime[0],
+                                executedTime: detail.executedTime[0],
+                                orderValue: detail.orderValue[0],
+                                status: detail.status[0],
+                                orderTerm: detail.orderTerm[0],
+                                priceType: detail.priceType[0],
+                                limitPrice: detail.limitPrice[0],
+                                stopPrice: detail.stopPrice[0],
+                                marketSession: detail.marketSession[0],
+                                allOrNone: detail.allOrNone[0],
+                                Instrument: detail.Instrument.map((instrument: any) => {
+                                    return {
+                                        Product: instrument.Product.map((product: any) => {
+                                            return {
+                                                symbol: product.symbol[0],
+                                                securityType: product.securityType[0],
+                                                callPut: product.callPut ? product.callPut[0] : undefined,
+                                                expiryYear: product.expiryYear ? product.expiryYear[0] : undefined,
+                                                expiryMonth: product.expiryMonth ? product.expiryMonth[0] : undefined,
+                                                expiryDay: product.expiryDay ? product.expiryDay[0] : undefined,
+                                                strikePrice: product.strikePrice ? product.strikePrice[0] : undefined,
+                                                productId: product.productId ? product.productId.map((id: any) => {
+                                                    return {
+                                                        symbol: id.symbol[0],
+                                                        typeCode: id.typeCode[0]
+                                                    };
+                                                }) : undefined
+                                            };
+                                        }),
+                                        symbolDescription: instrument.symbolDescription[0],
+                                        orderAction: instrument.orderAction[0],
+                                        quantityType: instrument.quantityType[0],
+                                        orderedQuantity: instrument.orderedQuantity[0],
+                                        filledQuantity: instrument.filledQuantity[0],
+                                        estimatedCommission: instrument.estimatedCommission[0],
+                                        estimatedFees: instrument.estimatedFees[0]
+                                    };
+                                }),
+                                netPrice: detail.netPrice[0],
+                                netBid: detail.netBid[0],
+                                netAsk: detail.netAsk[0],
+                                gcd: detail.gcd[0],
+                                ratio: detail.ratio[0]
+                            };
+                        })
+                    };
+                });
+                resolve(orders);
             }
         });
     });

@@ -50,7 +50,7 @@ oauthClient.getOAuthRequestToken({}, (error, oauth_token, oauth_token_secret) =>
                     return;
                 }
 
-                console.log('Access Token:', oauth_token);
+                console.log('\nAccess Token:', oauth_token);
                 console.log('Access Token Secret:', oauth_token_secret);
 
                 // const et = new EtradeAccount(oauth_token, oauth_token_secret);
@@ -59,5 +59,3 @@ oauthClient.getOAuthRequestToken({}, (error, oauth_token, oauth_token_secret) =>
         );
     });
 });
-
-
