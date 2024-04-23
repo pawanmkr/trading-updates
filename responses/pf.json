@@ -1,0 +1,57 @@
+{
+    "PortfolioResponse": {
+        "AccountPortfolio": {
+            "accountId": "133277828",
+            "Position": [
+                {
+                    "positionId": "369435043900",
+                    "Product": {
+                        "expiryDay": "0",
+                        "expiryMonth": "0",
+                        "expiryYear": "0",
+                        "productId": {
+                            "symbol": "GLO",
+                            "typeCode": "EQUITY"
+                        },
+                        "securitySubType": "CMUT",
+                        "securityType": "EQ",
+                        "strikePrice": "0",
+                        "symbol": "GLO"
+                    },
+                    "symbolDescription": "GLO",
+                    "dateAcquired": "1710302400000",
+                    "pricePaid": "5.0599",
+                    "commissions": "0",
+                    "otherFees": "0",
+                    "quantity": "250",
+                    "positionIndicator": "TYPE1",
+                    "positionType": "LONG",
+                    "daysGain": "-7.5",
+                    "daysGainPct": "-0.6134",
+                    "marketValue": "1215",
+                    "totalCost": "1265",
+                    "totalGain": "-50",
+                    "totalGainPct": "-3.9525",
+                    "pctOfPortfolio": "4.9934",
+                    "costPerShare": "5.06",
+                    "todayCommissions": "0",
+                    "todayFees": "0",
+                    "todayPricePaid": "0",
+                    "todayQuantity": "0",
+                    "adjPrevClose": "4.890000",
+                    "Quick": {
+                        "change": "-0.03",
+                        "changePct": "-0.6134",
+                        "lastTrade": "4.86",
+                        "lastTradeTime": "1713557400",
+                        "quoteStatus": "CLOSING",
+                        "volume": "114187"
+                    },
+                    "lotsDetails": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/portfolio/369435043900",
+                    "quoteDetails": "https://api.etrade.com/v1/market/quote/GLO"
+                }
+            ],
+            "totalPages": "1"
+        }
+    }
+}

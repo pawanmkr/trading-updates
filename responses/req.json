@@ -1,0 +1,64 @@
+{
+    "day": "monday",
+    "date": "fulldate",
+    "totalAccounts": 5,
+    "retirementAccounts": 2,
+    "nonretirementAccounts": 3,
+    "investedAmount": "the total amount from all accounts which is inveted",
+    "cashReserveAmount": "idle cash in all accounts",
+    "todaysUpdate": {
+        "gainOrLoss": "total gain or loss",
+        "top3Gainers": [
+            "apple",
+            "nvidia",
+            "openai"
+        ],
+        "top3Losers": [
+            "tcs",
+            "disney",
+            "another"
+        ],
+        "anualGain": {
+            "amount": 32000,
+            "shortTerm": 6000,
+            "longTerm": 26000
+        },
+        "orders": {
+            "total": 12,
+            "filled": 6,
+            "cancelled": 4,
+            "expired": 2
+        }
+    },
+    "STOCK/ETF/MF/BONDS": {
+        "changes": "you check all accounts and check shares / ETFs/Mutual Funds (without any expiry date)  and combine all those",
+        "top3": [
+            {
+                "name": "apple",
+                "change": "+865"
+            },
+            {
+                "name": "disney",
+                "change": "+34"
+            },
+            {
+                "name": "nvidia",
+                "change": "+8658"
+            }
+        ],
+        "bottom3": [
+            {
+                "name": "tcs",
+                "change": "-865"
+            },
+            {
+                "name": "universal",
+                "change": "-3476"
+            },
+            {
+                "name": "another",
+                "change": "-8658"
+            }
+        ]
+    }
+}
