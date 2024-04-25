@@ -219,6 +219,8 @@ export class EtradeAccount {
     let totalRetirementAccounts = 0;
 
     accounts.forEach((ac) => {
+      console.log(">>>>>>>>>>>>>>accountType", ac.accountType);
+      console.log(">>>>>>>>>>>>>>Comparision", ac.accountType.includes("IRA"));
       if (ac.accountType.includes("IRA")) {
         totalRetirementAccounts++;
       }
@@ -232,7 +234,8 @@ export class EtradeAccount {
     let holdings: Holdings[] = [];
 
     let gaintest = [];
-    let totalAnnualGains = 0;
+    let totalAnnualDividend = 0;
+    let totalDividend = 0;
 
     console.log("Calculating total invested amount...");
     //
@@ -242,9 +245,10 @@ export class EtradeAccount {
       const pfr = await this.getPortfolio(account.accountIdKey);
       if (pfr) {
         pfr.PortfolioResponse.Position.forEach((p) => {
-          // dividends
-          const exDividendDate = p.Complete.exDividendDate;
-          const divPayDate = p.Complete.divPayDate;
+          // _____________ Dividends ______________
+
+          // const exDividendDate = p.Complete.exDividendDate;
+          // const divPayDate = p.Complete.divPayDate;
           // if (exDividendDate) {
           //   console.log("exDividendDate", exDividendDate);
           //   // format exDividentData
@@ -270,20 +274,13 @@ export class EtradeAccount {
           //     formatteddivPayDate || p.Complete.divPayDate;
           // }
 
-          p.Complete.dividend += parseFloat(
-            p.Complete.dividend as unknown as string
-          );
-          p.Complete.annualDividend += parseFloat(
+          totalDividend += parseFloat(p.Complete.dividend as unknown as string);
+          totalAnnualDividend += parseFloat(
             p.Complete.annualDividend as unknown as string
           );
-          totalAnnualGains += parseFloat(
-            p.Complete.annualDividend as unknown as string
-          );
-          console.log("--------------Total annual", totalAnnualGains);
-          console.log(
-            "------------------>",
-            parseFloat(p.Complete.annualDividend as unknown as string)
-          );
+
+          pf.dividends.annualDividend = Math.floor(totalAnnualDividend);
+          pf.dividends.dividend = Math.floor(totalDividend);
 
           // total invested amount
           totalInvestedAmount += parseFloat(p.marketValue);

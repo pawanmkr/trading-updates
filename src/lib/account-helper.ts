@@ -89,7 +89,7 @@ export async function parseBalanceResponseXmlToJson(
         reject(err);
       } else {
         // console.log(util.inspect(xmlData, false, null, true));
-        console.log("--------------------->XML DATA", xmlData);
+        // console.log("--------------------->XML DATA", xmlData);
         const balanceResponse: BalanceResponse = {
           accountId: result.BalanceResponse.accountId[0],
           accountType: result.BalanceResponse.accountType[0],

@@ -14,10 +14,10 @@ export interface Portfolio {
 interface Dividends {
   annualDividend: number;
   dividend: number;
-  divYield: number;
-  divPayDate: string;
-  exDividendDate: string;
-  cusip: string;
+  // divYield: number;
+  // divPayDate: string;
+  // exDividendDate: string;
+  // cusip: string;
 }
 interface TodaysUpdate {
   daysGain: number;
@@ -84,10 +84,10 @@ const pf: Portfolio = {
   dividends: {
     annualDividend: 0,
     dividend: 0,
-    divYield: 0,
-    divPayDate: "",
-    exDividendDate: "",
-    cusip: "",
+    // divYield: 0,
+    // divPayDate: "",
+    // exDividendDate: "",
+    // cusip: "",
   },
 };
 
