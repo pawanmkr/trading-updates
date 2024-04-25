@@ -424,3 +424,18 @@ export async function parseOrdersResponseXmlToJson(
     });
   });
 }
+
+export async function parseTransactionsResponseXmlToJson(
+  xmlData: string
+): Promise<any> {
+  const parser = new Parser();
+  return new Promise((resolve, reject) => {
+    parser.parseString(xmlData, (err, result) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(result);
+      }
+    });
+  });
+}

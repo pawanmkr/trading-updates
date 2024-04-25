@@ -11,6 +11,7 @@ import {
   parseEtradeXmlAccountList,
   parseOrdersResponseXmlToJson,
   parsePortfolioResponseXmlToJson,
+  parseTransactionsResponseXmlToJson,
   PortfolioResponse,
 } from "./account-helper.js";
 import pf from "./portfolio.js";
@@ -99,6 +100,7 @@ export class EtradeAccount {
               const balances = await parseBalanceResponseXmlToJson(
                 result as string
               );
+
               resolve(balances);
             } catch (parseError) {
               console.error("\nError parsing account balances", parseError);
@@ -128,7 +130,10 @@ export class EtradeAccount {
               const orders = await parseOrdersResponseXmlToJson(
                 result as string
               );
-              // console.log(util.inspect(orders, true, null, true));
+              // console.log(
+              //   "---------------ORders-----------------",
+              //   util.inspect(orders, true, null, true)
+              // );
               resolve(orders);
             } catch (parseError) {
               console.error("\nError parsing order list", parseError);
@@ -182,6 +187,146 @@ export class EtradeAccount {
     });
   }
 
+  async getTransactions(accountIdKey: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      oauthClient.get(
+        `https://api.etrade.com/v1/accounts/${accountIdKey}/transactions`,
+        this.accessToken,
+        this.accessTokenSecret,
+        async (err, result, response) => {
+          if (err) {
+            console.log("\nFailed to get transactions");
+            console.error(err);
+            reject(err);
+          } else {
+            try {
+              const transactions = await parseTransactionsResponseXmlToJson(
+                result as string
+              );
+
+              resolve(transactions);
+            } catch (parseError) {
+              console.error("\nError parsing order list", parseError);
+              reject(parseError);
+            }
+          }
+        }
+      );
+    });
+  }
+  async analyzeTrades(accountIdKey: string): Promise<void> {
+    try {
+      // Fetch transactions for the account
+      console.log("Fetching transactions...");
+
+      const transactionResponse = await this.getTransactions(accountIdKey);
+
+      const transactions =
+        transactionResponse?.TransactionListResponse.Transaction;
+
+      if (!Array.isArray(transactions)) {
+        console.error("Transactions is not an array");
+        return;
+      }
+
+      // Filter transactions for the current month
+      const currentMonthTransactions = transactions.filter((transaction) => {
+        const transactionDate = new Date(
+          parseInt(transaction.transactionDate[0])
+        );
+        const transactionMonth = transactionDate.getMonth();
+        const transactionYear = transactionDate.getFullYear();
+        const currentDate = new Date();
+        const currentMonth = currentDate.getMonth();
+        const currentYear = currentDate.getFullYear();
+        return (
+          transactionMonth === currentMonth && transactionYear === currentYear
+        );
+      });
+      // formatting transaction date
+      currentMonthTransactions.forEach((transaction) => {
+        const transactionDateTimestamp = parseInt(
+          transaction.transactionDate[0]
+        );
+        const transactionDate = new Date(transactionDateTimestamp);
+        const formattedTransactionDate =
+          transactionDate.toLocaleDateString("en-US");
+
+        // fromat postdte
+        const postDateTimestamp = parseInt(transaction.postDate[0]);
+        const postDate = new Date(postDateTimestamp);
+        const formattedPostDate = postDate.toLocaleDateString("en-US");
+
+        // Update transaction object with formatted dates
+        transaction.transactionDate = formattedTransactionDate;
+        transaction.postDate = formattedPostDate;
+      });
+      console.log(
+        "Current Month Transactions-------------------------->",
+        currentMonthTransactions
+      );
+
+      let totalGains = 0;
+      let totalLosses = 0;
+      // ____ bought ___
+      const bought = currentMonthTransactions.filter((transaction) =>
+        transaction.transactionType[0].toLowerCase().includes("bought")
+      );
+      const symbolsBoughtWithPriceAndQuantity = bought.map((b) => {
+        return {
+          symbol: b.brokerage[0].displaySymbol[0],
+          quantity: b.brokerage[0].quantity[0],
+          price: b.brokerage[0].price[0],
+          totalPrice: Math.floor(
+            parseFloat(b.brokerage[0].quantity[0]) *
+              parseFloat(b.brokerage[0].price[0])
+          ),
+        };
+      });
+      // _____ sold _____
+      const sold = currentMonthTransactions.filter((transaction) =>
+        transaction.transactionType[0].toLowerCase().includes("sold")
+      );
+      const symbolsSoldWithPriceAndQuantity = sold.map((s) => {
+        return {
+          symbol: s.brokerage[0].product[0].symbol[0],
+
+          price: s.brokerage[0].price[0],
+        };
+      });
+
+      console.log(
+        `You did ${currentMonthTransactions.length} trades this month.`
+      );
+
+      console.log(
+        `You Bought ${bought.length} stocks and Sold ${sold.length} stocks this month.`
+      );
+      // __________ Console log the bought transactions____________
+      symbolsBoughtWithPriceAndQuantity.forEach((s) => {
+        // Extract transaction details
+        const symbol = s.symbol;
+        const quantity = parseInt(s.quantity);
+        const totalPrice = s.totalPrice;
+
+        const message = `You purchased ${symbol} with a quantity of ${quantity} and a total price of $${totalPrice} in this month.`;
+
+        console.log(message);
+      });
+      // __________ Console log the Sold transactions____________
+      symbolsSoldWithPriceAndQuantity.forEach((s) => {
+        // Extract transaction details
+        const symbol = s.symbol;
+
+        const message = `You Sold ${symbol} with price of $${s.price} in this month`;
+
+        console.log(message);
+      });
+    } catch (error) {
+      console.error("Error analyzing trades:", error);
+    }
+  }
+
   async constructPortfolio(accounts: Account[]): Promise<void> {
     const promises: BalanceResponse[] = [];
     console.log("-----------------Accounts------------------------", accounts);
@@ -195,6 +340,7 @@ export class EtradeAccount {
         )
       );
     }
+
     const balances = await Promise.all(promises);
     console.log(util.inspect(balances, true, null, true));
     // TODO: Fix the below code
@@ -219,8 +365,6 @@ export class EtradeAccount {
     let totalRetirementAccounts = 0;
 
     accounts.forEach((ac) => {
-      console.log(">>>>>>>>>>>>>>accountType", ac.accountType);
-      console.log(">>>>>>>>>>>>>>Comparision", ac.accountType.includes("IRA"));
       if (ac.accountType.includes("IRA")) {
         totalRetirementAccounts++;
       }
@@ -371,8 +515,10 @@ export class EtradeAccount {
     const accounts = await et.listAccounts();
     console.log(accounts);
     if (accounts && accounts.length > 0) {
+      await et.analyzeTrades(accounts[0].accountIdKey);
       await et.constructPortfolio(accounts);
       await et.listOrders(accounts[0].accountIdKey);
+
       console.log("--->", pf);
 
       // const message = prepareMessage(pf);
