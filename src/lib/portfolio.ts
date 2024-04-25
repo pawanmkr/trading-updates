@@ -9,6 +9,21 @@ export interface Portfolio {
   todaysUpdate: TodaysUpdate;
   stockEtfsMfsBonds: StockEtfsMfsBonds;
   dividends: Dividends; // Added dividends field
+  tradesThisMonth: TradesThisMonth;
+}
+
+interface TradesThisMonth {
+  totalTrades: number;
+  buyTrades: number;
+  sellTrades: number;
+  symbolsBoughtWithPriceAndQuantity: SymbolWithPriceAndQuantity[];
+  symbolsSoldWithPriceAndQuantity: SymbolWithPriceAndQuantity[];
+}
+interface SymbolWithPriceAndQuantity {
+  symbol: string;
+  price: number;
+  quantity?: number;
+  totalPrice?: number;
 }
 
 interface Dividends {
@@ -75,12 +90,19 @@ const pf: Portfolio = {
       expired: 0,
     },
   },
+
   stockEtfsMfsBonds: {
     changes: "",
     top3: [],
     bottom3: [],
   },
-
+  tradesThisMonth: {
+    totalTrades: 0,
+    buyTrades: 0,
+    sellTrades: 0,
+    symbolsBoughtWithPriceAndQuantity: [],
+    symbolsSoldWithPriceAndQuantity: [],
+  },
   dividends: {
     annualDividend: 0,
     dividend: 0,

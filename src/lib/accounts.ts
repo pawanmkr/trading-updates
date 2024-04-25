@@ -295,10 +295,18 @@ export class EtradeAccount {
         };
       });
 
+      //______ Adding to the portfolio object __________
+      pf.tradesThisMonth.totalTrades = currentMonthTransactions.length;
+      pf.tradesThisMonth.buyTrades = bought.length;
+      pf.tradesThisMonth.sellTrades = sold.length;
+      pf.tradesThisMonth.symbolsBoughtWithPriceAndQuantity =
+        symbolsBoughtWithPriceAndQuantity;
+      pf.tradesThisMonth.symbolsSoldWithPriceAndQuantity =
+        symbolsSoldWithPriceAndQuantity;
+
       console.log(
         `You did ${currentMonthTransactions.length} trades this month.`
       );
-
       console.log(
         `You Bought ${bought.length} stocks and Sold ${sold.length} stocks this month.`
       );
@@ -366,6 +374,7 @@ export class EtradeAccount {
 
     accounts.forEach((ac) => {
       if (ac.accountType.includes("IRA")) {
+        console.log("AccoutnType", ac.accountType);
         totalRetirementAccounts++;
       }
     });
@@ -521,14 +530,15 @@ export class EtradeAccount {
 
       console.log("--->", pf);
 
-      // const message = prepareMessage(pf);
-      // const audioMessagePath = await tts(message);
-      // await sendEmail(
-      //     "iampawanmkr@gmail.com", // dhaval_p_shah@yahoo.com
-      //     "E*Trade Daily Updates",
-      //     "Please listen to the audio for details.",
-      //     audioMessagePath
-      // );
+      const message = prepareMessage(pf);
+      console.log("Message", message);
+      const audioMessagePath = await tts(message);
+      await sendEmail(
+          "iampawanmkr@gmail.com", // dhaval_p_shah@yahoo.com
+          "E*Trade Daily Updates",
+          "Please listen to the audio for details.",
+          audioMessagePath
+      );
     }
   } catch (error) {
     console.error(error);

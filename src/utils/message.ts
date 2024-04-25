@@ -2,7 +2,30 @@ import { Portfolio } from "src/lib/portfolio";
 
 // This message can be customized with OpenAI everytime for each customer according to data
 export default function prepareMessage(pf: Portfolio): string {
-    return `
+  const totalTrades = pf.tradesThisMonth.totalTrades;
+  const buyTrades = pf.tradesThisMonth.buyTrades;
+  const sellTrades = pf.tradesThisMonth.sellTrades;
+
+  // Generating message for trades this month
+  const tradesThisMonthMessage = `
+        "You made a total of ${totalTrades} trades this month. You Bought ${buyTrades} stocks and Sold ${sellTrades} stocks this month."
+    `;
+
+  // Generating message for each trade
+  const symbolsBoughtMessage =
+    pf.tradesThisMonth.symbolsBoughtWithPriceAndQuantity
+      .map((trade) => {
+        return `You purchased ${trade.symbol} with a quantity of ${trade.quantity} and a total price of $${trade.totalPrice} in this month.`;
+      })
+      .join("\n");
+
+  const symbolsSoldMessage = pf.tradesThisMonth.symbolsSoldWithPriceAndQuantity
+    .map((trade) => {
+      return `You sold ${trade.symbol} worth $${trade.totalPrice} in this month.`;
+    })
+    .join("\n");
+
+  return `
         [Soft Chime]
 
         "Dear customer,"
@@ -14,6 +37,12 @@ export default function prepareMessage(pf: Portfolio): string {
         "Now, onto today's update."
 
         "We've seen a total gain of $${pf.todaysUpdate.daysGain} for today. Your top three gainers for the day are ${pf.todaysUpdate.top3Gainers[0]}, ${pf.todaysUpdate.top3Gainers[1]}, and ${pf.todaysUpdate.top3Gainers[2]}, while the top three losers are ${pf.todaysUpdate.top3Losers[0]}, ${pf.todaysUpdate.top3Losers[1]}, and ${pf.todaysUpdate.top3Losers[2]}."
+
+        ${tradesThisMonthMessage}
+
+        ${symbolsBoughtMessage}
+
+        ${symbolsSoldMessage}
 
         "Looking at the bigger picture, your annual gain stands at $${pf.todaysUpdate.anualGain.amount}. This includes a short-term loss of $${pf.todaysUpdate.anualGain.shortTerm} and a long-term loss of $${pf.todaysUpdate.anualGain.longTerm}. As for your orders, there have been no transactions filled, cancelled, or expired."
 
