@@ -1,31 +1,17 @@
-import { Portfolio } from "src/lib/portfolio";
+/* import { Portfolio } from "src/lib/portfolio";
 
 // This message can be customized with OpenAI everytime for each customer according to data
 export default function prepareMessage(pf: Portfolio): string {
-  const totalTrades = pf.tradesThisMonth.totalTrades;
-  const buyTrades = pf.tradesThisMonth.buyTrades;
-  const sellTrades = pf.tradesThisMonth.sellTrades;
+    const total = pf.tradesThisMonth.total;
+    const buy = pf.tradesThisMonth.buy;
+    const sell = pf.tradesThisMonth.sell;
 
-  // Generating message for trades this month
-  const tradesThisMonthMessage = `
-        "You made a total of ${totalTrades} trades this month. You Bought ${buyTrades} stocks and Sold ${sellTrades} stocks this month."
+    // Generating message for trades this month
+    const tradesThisMonthMessage = `
+        "You made a total of ${total} trades this month. You Bought ${buy} stocks and Sold ${sell} stocks this month."
     `;
 
-  // Generating message for each trade
-  const symbolsBoughtMessage =
-    pf.tradesThisMonth.symbolsBoughtWithPriceAndQuantity
-      .map((trade) => {
-        return `You purchased ${trade.symbol} with a quantity of ${trade.quantity} and a total price of $${trade.totalPrice} in this month.`;
-      })
-      .join("\n");
-
-  const symbolsSoldMessage = pf.tradesThisMonth.symbolsSoldWithPriceAndQuantity
-    .map((trade) => {
-      return `You sold ${trade.symbol} worth $${trade.totalPrice} in this month.`;
-    })
-    .join("\n");
-
-  return `
+    return `
         [Soft Chime]
 
         "Dear customer,"
@@ -40,10 +26,6 @@ export default function prepareMessage(pf: Portfolio): string {
 
         ${tradesThisMonthMessage}
 
-        ${symbolsBoughtMessage}
-
-        ${symbolsSoldMessage}
-
         "Looking at the bigger picture, your annual gain stands at $${pf.todaysUpdate.anualGain.amount}. This includes a short-term loss of $${pf.todaysUpdate.anualGain.shortTerm} and a long-term loss of $${pf.todaysUpdate.anualGain.longTerm}. As for your orders, there have been no transactions filled, cancelled, or expired."
 
         "Regarding your stocks, ETFs, mutual funds, and bonds, there haven't been any specific changes highlighted today among the top or bottom performers."
@@ -57,3 +39,4 @@ export default function prepareMessage(pf: Portfolio): string {
         *[Soft Chime]*
     `;
 }
+ */
