@@ -190,6 +190,7 @@ interface Quick {
     quoteStatus: string;
     volume: string;
 }
+
 interface Complete {
     annualDividend: number;
     dividend: number;
@@ -202,6 +203,7 @@ interface Complete {
 interface Position {
     positionId: string;
     Product: Product;
+    change: string;
     symbolDescription: string;
     dateAcquired: string;
     pricePaid: string;
@@ -374,7 +376,7 @@ interface OrdersResponse {
 
 export async function parseOrdersResponseXmlToJson(
     xmlData: string
-): Promise<Order> {
+): Promise<Order[]> {
     const parser = new Parser();
     return new Promise((resolve, reject) => {
         parser.parseString(xmlData, (err, result) => {

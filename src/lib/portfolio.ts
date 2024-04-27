@@ -5,7 +5,9 @@ export interface Portfolio {
     date: string;
     totalAccounts: number;
     retirementAccounts: number;
+    retirementAccountsValue: number;
     nonRetirementAccounts: number;
+    nonRetirementAccountsValue: number;
     investedAmount: number;
     cashReserveAmount: number;
     todaysUpdate: TodaysUpdate;
@@ -106,7 +108,7 @@ interface Orders {
 }
 
 interface StockEtfsMfsBonds {
-    changes: string;
+    change: number;
     top3: Holding[];
     bottom3: Holding[];
 }
@@ -121,7 +123,9 @@ const pf: Portfolio = {
     date: "",
     totalAccounts: 0,
     retirementAccounts: 0,
+    retirementAccountsValue: 0,
     nonRetirementAccounts: 0,
+    nonRetirementAccountsValue: 0,
     investedAmount: 0,
     cashReserveAmount: 0,
     todaysUpdate: {
@@ -142,7 +146,7 @@ const pf: Portfolio = {
     },
 
     stockEtfsMfsBonds: {
-        changes: "",
+        change: 0,
         top3: [],
         bottom3: [],
     },

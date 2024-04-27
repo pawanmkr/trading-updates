@@ -2,7 +2,6 @@ import { configDotenv } from "dotenv";
 import * as oauth from "oauth";
 import util from "node:util";
 import dayjs from "dayjs";
-import { format } from "date-fns";
 import {
     Account,
     BalanceResponse,
@@ -16,10 +15,10 @@ import {
     Transaction,
 } from "./account-helper.js";
 import pf from "./portfolio.js";
-// import prepareMessage from "../utils/message.js";
+import prepareMessage from "../utils/message.js";
 import tts from "../services/tts.js";
 import { sendEmail } from "../services/mail.js";
-import { Parser } from "xml2js";
+
 
 configDotenv();
 
@@ -47,10 +46,12 @@ export class EtradeAccount {
     private accessToken: string;
     private accessTokenSecret: string;
     holdings: Holdings[] = [];
+    retirementAccounts: Set<string>;
 
     constructor(accessToken: string, accessTokenSecret: string) {
         this.accessToken = accessToken;
         this.accessTokenSecret = accessTokenSecret;
+        this.retirementAccounts = new Set<string>();
     }
 
     async listAccounts(): Promise<Account[]> {
@@ -113,7 +114,7 @@ export class EtradeAccount {
         });
     }
 
-    async listOrders(accountIdKey: string): Promise<Order | null> {
+    async listOrders(accountIdKey: string): Promise<Order[] | null> {
         return new Promise((resolve, reject) => {
             oauthClient.get(
                 `https://api.etrade.com/v1/accounts/${accountIdKey}/orders?fromDate=${dayjs()
@@ -132,7 +133,7 @@ export class EtradeAccount {
                                 console.log(`\nNo orders found for ${accountIdKey}`);
                                 resolve(null);
                             } else {
-                                const orders: Order = await parseOrdersResponseXmlToJson(result as string);
+                                const orders = await parseOrdersResponseXmlToJson(result as string);
                                 resolve(orders);
                             }
                         } catch (parseError) {
@@ -145,17 +146,17 @@ export class EtradeAccount {
         });
     }
 
-
     getPortfolio(accountIdKey: string): Promise<PortfolioResponse | null> {
         return new Promise((resolve, reject) => {
             oauthClient.get(
-                `https://api.etrade.com/v1/accounts/${accountIdKey}/portfolio?view=COMPLETE`,
+                `https://api.etrade.com/v1/accounts/${accountIdKey}/portfolio?view=QUICK`,
                 this.accessToken,
                 this.accessTokenSecret,
                 async (err, result, response) => {
                     if (err) {
                         console.log("\nFailed to get portfolio");
                         console.error(err);
+                        console.log(accountIdKey);
                         reject(err);
                     } else {
                         if (!result) {
@@ -203,6 +204,8 @@ export class EtradeAccount {
     }
 
     async calcuateTrades(accounts: Account[]): Promise<void> {
+        console.log("\nCalculating trades...");
+
         const promises: Transaction[][] = [];
         for (const account of accounts) {
             promises.push(await this.getTransactions(account.accountIdKey));
@@ -222,7 +225,7 @@ export class EtradeAccount {
                     // annual ______________
                     if (txn.transactionType === undefined) {
                         console.log(util.inspect(txn, false, null, true));
-                        process.exit(1);
+
                     }
 
                     if (txn.transactionType.includes("Dividend")) {
@@ -290,26 +293,62 @@ export class EtradeAccount {
                 });
             })
         }
+
+        // annual total
+        pf.trades.annual.buy.amount = pf.trades.annual.eqBondsEtfsMfs.buy.amount + pf.trades.annual.options.buy.amount;
+        pf.trades.annual.buy.count = pf.trades.annual.eqBondsEtfsMfs.buy.count + pf.trades.annual.options.buy.count;
+        pf.trades.annual.sell.amount = pf.trades.annual.eqBondsEtfsMfs.sell.amount + pf.trades.annual.options.sell.amount;
+        pf.trades.annual.sell.count = pf.trades.annual.eqBondsEtfsMfs.sell.count + pf.trades.annual.options.sell.count;
+
+        // monthly total
+        pf.trades.monthly.buy.amount = pf.trades.monthly.eqBondsEtfsMfs.buy.amount + pf.trades.monthly.options.buy.amount;
+        pf.trades.monthly.buy.count = pf.trades.monthly.eqBondsEtfsMfs.buy.count + pf.trades.monthly.options.buy.count;
+        pf.trades.monthly.sell.amount = pf.trades.monthly.eqBondsEtfsMfs.sell.amount + pf.trades.monthly.options.sell.amount;
+        pf.trades.monthly.sell.count = pf.trades.monthly.eqBondsEtfsMfs.sell.count + pf.trades.monthly.options.sell.count;
+
+        // round off amounts
+        pf.trades.annual.eqBondsEtfsMfs.buy.amount = Math.round(pf.trades.annual.eqBondsEtfsMfs.buy.amount);
+        pf.trades.annual.eqBondsEtfsMfs.sell.amount = Math.round(pf.trades.annual.eqBondsEtfsMfs.sell.amount);
+        pf.trades.annual.options.buy.amount = Math.round(pf.trades.annual.options.buy.amount);
+        pf.trades.annual.options.sell.amount = Math.round(pf.trades.annual.options.sell.amount);
+        pf.trades.annual.buy.amount = Math.round(pf.trades.annual.buy.amount);
+        pf.trades.annual.sell.amount = Math.round(pf.trades.annual.sell.amount);
+        // monthly
+        pf.trades.monthly.eqBondsEtfsMfs.buy.amount = Math.round(pf.trades.monthly.eqBondsEtfsMfs.buy.amount);
+        pf.trades.monthly.eqBondsEtfsMfs.sell.amount = Math.round(pf.trades.monthly.eqBondsEtfsMfs.sell.amount);
+        pf.trades.monthly.options.buy.amount = Math.round(pf.trades.monthly.options.buy.amount);
+        pf.trades.monthly.options.sell.amount = Math.round(pf.trades.monthly.options.sell.amount);
+        pf.trades.monthly.buy.amount = Math.round(pf.trades.monthly.buy.amount);
+        pf.trades.monthly.sell.amount = Math.round(pf.trades.monthly.sell.amount);
+        // dividends
+        pf.dividends.annual = Math.round(pf.dividends.annual);
+        pf.trades.annual.buy.amount = Math.round(pf.trades.annual.buy.amount);
     }
 
     async dailyOrders(accounts: Account[]): Promise<void> {
-        const promises: Order[] = [];
-        for (const account of accounts) promises.push(await this.listOrders(account.accountIdKey));
-        const orders = await Promise.all(promises);
+        console.log("\nCalculating orders...");
 
-        orders.forEach(order => {
-            if (order && order.OrderDetail !== undefined) {
-                order.OrderDetail.forEach(odr => {
-                    pf.todaysUpdate.orders.total += 1;
-                    if (odr.status === 'EXPIRED') pf.todaysUpdate.orders.expired += 1;
-                    if (odr.status === 'CANCELLED') pf.todaysUpdate.orders.cancelled += 1;
-                    if (odr.status === 'EXECUTED') pf.todaysUpdate.orders.filled += 1;
-                })
-            }
-        });
+        const promises: Order[][] = [];
+        for (const account of accounts) promises.push(await this.listOrders(account.accountIdKey));
+        const ordersFromAllAccounts = await Promise.all(promises);
+
+        if (ordersFromAllAccounts.length > 0) {
+            ordersFromAllAccounts.forEach(orders => {
+                if (orders) {
+                    orders.forEach(order => {
+                        pf.todaysUpdate.orders.total += 1;
+                        if (order.OrderDetail[0].status === 'EXPIRED') pf.todaysUpdate.orders.expired += 1;
+                        if (order.OrderDetail[0].status === 'CANCELLED') pf.todaysUpdate.orders.cancelled += 1;
+                        if (order.OrderDetail[0].status === 'EXECUTED') pf.todaysUpdate.orders.filled += 1;
+                    });
+                }
+            });
+        }
     }
 
     async setToppersAndLosers(): Promise<void> {
+        console.log("\nCalculating toppers and losers...");
+
         this.holdings.sort((a, b) => b.daysGain - a.daysGain);
         for (let i = 0; i < 3; i++) { // top gainers
             if (
@@ -330,18 +369,81 @@ export class EtradeAccount {
         }
     }
 
+    async calculateCashReserve(balances: BalanceResponse[]) {
+        console.log("\nCalculating cash reserve...");
+
+        balances.forEach((bl) => {
+            // _______________ Total Cash Reserve ___________________
+            pf.cashReserveAmount += parseFloat(bl.Computed.cashBuyingPower);
+            // _______________ Total Assests value ___________________
+            pf.investedAmount += parseFloat(bl.Computed.RealTimeValues.totalAccountValue);
+
+            // _______________ Assets in Retirement vs Non-Retirement ___________________
+            if (this.retirementAccounts.has(bl.accountId)) {
+                pf.retirementAccountsValue += parseFloat(bl.Computed.RealTimeValues.totalAccountValue);
+            } else {
+                pf.nonRetirementAccountsValue += parseFloat(bl.Computed.RealTimeValues.totalAccountValue);
+            }
+        });
+
+        // _______________ Round off amounts ___________________
+        pf.cashReserveAmount = Math.round(pf.cashReserveAmount);
+        pf.investedAmount = Math.round(pf.investedAmount);
+        pf.retirementAccountsValue = Math.round(pf.retirementAccountsValue);
+        pf.nonRetirementAccountsValue = Math.round(pf.nonRetirementAccountsValue);
+    }
+
+    async getBalancesFromAllAccounts(accounts: Account[]): Promise<BalanceResponse[]> {
+        console.log("\nGetting account balances...");
+
+        const promises: BalanceResponse[] = [];
+        for (const account of accounts) {
+            promises.push(
+                await this.getAccountBalances(
+                    account.accountIdKey,
+                    account.institutionType
+                )
+            );
+
+            // _____________ Retirement Accounts ________________
+            if (account.accountDesc.includes("IRA") || account.accountType.includes("IRA")) {
+                pf.retirementAccounts += 1;
+                this.retirementAccounts.add(account.accountId);
+            };
+        }
+        // _________________ Non-retirement accounts _________________
+        pf.nonRetirementAccounts = accounts.length - pf.retirementAccounts;
+
+        const balances = await Promise.all(promises);
+        return balances;
+    }
+
     async calculateMain(accounts: Account[]) {
-        let td = 0;
-        let d = 0;
+        console.log("\nCalculating total invested amount and dividends...");
+
+        const assets = [];
+
         for (const account of accounts) {
             console.log(`Calculating positions for ${account.accountDesc}`);
 
-            const pfr = await this.getPortfolio(account.accountIdKey);
+            let pfr: PortfolioResponse;
+            try {
+                pfr = await this.getPortfolio(account.accountIdKey);
+            } catch (error) {
+                console.log(util.inspect(account, false, null, true));
+                console.log("found");
+                process.exit(1);
+            }
             if (pfr) {
                 pfr.PortfolioResponse.Position.forEach((p) => {
-                    // _____________________ dividends _____________________
-                    td += parseFloat(p.Complete.annualDividend as unknown as string);
-                    d += parseFloat(p.Complete.dividend as unknown as string);
+                    // _____________________ stocks, etfs, mfs, and bonds _____________________
+                    if (p.Product.securityType.includes("EQ" || "MF" || "BOND" || "MMF")) {
+                        pf.stockEtfsMfsBonds.change += parseFloat(p.Quick.change);
+                        assets.push({
+                            symbol: p.Product.symbol,
+                            change: parseFloat(p.daysGain),
+                        });
+                    }
 
                     // _____________________ total days gain _____________________
                     pf.todaysUpdate.daysGain += parseFloat(p.daysGain);
@@ -364,10 +466,31 @@ export class EtradeAccount {
             pf.todaysUpdate.anualGain.amount = Math.round(pf.todaysUpdate.anualGain.amount);
             pf.todaysUpdate.anualGain.shortTerm = Math.round(pf.todaysUpdate.anualGain.shortTerm);
             pf.todaysUpdate.anualGain.longTerm = Math.round(pf.todaysUpdate.anualGain.longTerm);
+
+            // ______________________ dividends ______________________
+            pf.dividends.annual = Math.round(pf.dividends.annual);
+            pf.dividends.monthly = Math.round(pf.dividends.monthly);
         }
 
-        console.log("Dividend annual:", td);
-        console.log("Dividend monthly:", d);
+        assets.sort((a, b) => b.daysGain - a.daysGain);
+        for (let i = 0; i < 3; i++) { // top 3
+            if (
+                assets[i].symbol &&
+                !pf.stockEtfsMfsBonds.top3.includes(assets[i].symbol)
+            )
+                pf.stockEtfsMfsBonds.top3.push(assets[i].symbol);
+        }
+
+        assets.reverse();
+        for (let i = 0; i < 3; i++) { // top losers 3
+            if (assets[i].symbol) {
+                if (!pf.stockEtfsMfsBonds.bottom3.includes(assets[i].symbol)) {
+                    pf.stockEtfsMfsBonds.bottom3.push(assets[i].symbol);
+                }
+            }
+        }
+
+        pf.stockEtfsMfsBonds.change = Math.round(pf.stockEtfsMfsBonds.change);
     }
 
     async constructPortfolio(accounts: Account[]): Promise<void> {
@@ -375,51 +498,18 @@ export class EtradeAccount {
         pf.day = dayjs().format("dddd");
         pf.date = dayjs().format("YYYY-MM-DD");
 
-        // __________________ Total Accounts __________________
         pf.totalAccounts = accounts.length;
 
-        const promises: BalanceResponse[] = [];
+        const balances = await this.getBalancesFromAllAccounts(accounts);
 
-        for (const account of accounts) {
-            promises.push(
-                await this.getAccountBalances(
-                    account.accountIdKey,
-                    account.institutionType
-                )
-            );
-            // _____________ Retirement Accounts ________________
-            if (account.accountDesc.includes("IRA") || account.accountType.includes("IRA")) pf.retirementAccounts += 1;
-        }
-        // _________________ Non-retirement accounts _________________
-        pf.nonRetirementAccounts = accounts.length - pf.retirementAccounts;
+        await this.calculateCashReserve(balances);
 
-        console.log("\nGetting account balances...");
-        const balances = await Promise.all(promises);
-
-        console.log("\nCalculating total cash...");
-        balances.forEach((bl) => {
-            // _______________ Total Cash Reserve ___________________
-            pf.cashReserveAmount += parseFloat(bl.Computed.cashBuyingPower);
-            // _______________ Total Assests value ___________________
-            pf.investedAmount += parseFloat(bl.Computed.RealTimeValues.totalAccountValue);
-        });
-
-        console.log("\nCalculating total invested amount and dividends...");
         await this.calculateMain(accounts);
 
-        // _________________________ Toppers and Losers ________________________________
-        console.log("\nCalculating toppers and losers...");
         await this.setToppersAndLosers();
 
-        // ______________________ Daily orders _________________________
-        console.log("\nCalculating orders...");
         await this.dailyOrders(accounts);
 
-        // ________________________ Stock, ETFs, MFS, Bonds _________________________
-
-
-        // ________________________ Trades _________________________
-        console.log("\nCalculating trades...");
         await this.calcuateTrades(accounts);
     }
 }
@@ -434,15 +524,16 @@ export class EtradeAccount {
             await et.constructPortfolio(accounts);
             console.log(util.inspect(pf, false, null, true));
 
-            /*       const message = prepareMessage(pf);
-                  console.log("Message", message);
-                  const audioMessagePath = await tts(message);
-                  await sendEmail(
-                      "iampawanmkr@gmail.com", // dhaval_p_shah@yahoo.com
-                      "E*Trade Daily Updates",
-                      "Please listen to the audio for details.",
-                      audioMessagePath
-                  ); */
+            const message = prepareMessage(pf);
+            console.log("Message", message);
+
+            const audioMessagePath = await tts(message);
+            await sendEmail(
+                "iampawanmkr@gmail.com", // dhaval_p_shah@yahoo.com
+                "Daily Updates",
+                "Please listen to the audio for details.",
+                audioMessagePath
+            );
         }
     } catch (error) {
         console.error(error);
