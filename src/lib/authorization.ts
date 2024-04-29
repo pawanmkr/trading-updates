@@ -1,5 +1,7 @@
 import * as oauth from 'oauth';
 import readline from "readline";
+
+
 import { EtradeAccount } from './accounts.js';
 
 const rl = readline.createInterface({
@@ -16,7 +18,7 @@ export const oauthClient = new oauth.OAuth(
     consumerKey,
     consumerSecret,
     '1.0',
-    'oob', // Out-of-band for manual code grant
+    'oob', 
     'HMAC-SHA1'
 );
 

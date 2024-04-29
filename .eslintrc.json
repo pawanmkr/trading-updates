@@ -42,6 +42,10 @@
         ],
         "@typescript-eslint/no-explicit-any": [
             "error"
+        ],
+        "no-unused-vars": [
+            "error",
+            "always"
         ]
     }
 }

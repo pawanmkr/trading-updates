@@ -1,30 +1,48 @@
-import { Portfolio } from "src/lib/portfolio";
+/* import { Portfolio } from "src/lib/portfolio";
 
-// This message can be customized with OpenAI everytime for each customer according to data
 export default function prepareMessage(pf: Portfolio): string {
-    return `
-        [Soft Chime]
+    const {
+        day,
+        date,
+        totalAccounts,
+        retirementAccounts,
+        retirementAccountsValue,
+        nonRetirementAccounts,
+        nonRetirementAccountsValue,
+        investedAmount,
+        cashReserveAmount,
+        todaysUpdate,
+        stockEtfsMfsBonds,
+        dividends,
+        trades,
+    } = pf;
 
-        "Dear customer,"
+    // Craft the message
 
-        "We're reaching out to give you a quick update on your E*TRADE account for today, ${pf.day}, ${pf.date}. Let's dive right in."
+    let message = `Hi there! This is your investment update for ${day}, ${date}. 
+    Across your ${totalAccounts} accounts, your total investment sits at $${investedAmount.toFixed(2)}. This includes $${retirementAccountsValue.toFixed(2)} in your ${retirementAccounts} retirement accounts, making up ${((retirementAccountsValue / investedAmount) * 100).toFixed(1)}% of the portfolio, and $${nonRetirementAccountsValue.toFixed(2)} in your ${nonRetirementAccounts} non-retirement accounts. You also have $${cashReserveAmount.toFixed(2)} in cash reserves.`;
 
-        "You currently have a total of ${pf.totalAccounts} accounts with us, including ${pf.retirementAccounts} retirement account(s) and ${pf.nonRetirementAccounts} non-retirement account(s). Your invested amount stands at $${pf.investedAmount}, while your cash reserve amounts to $${pf.cashReserveAmount}."
+    // Today's Performance
+    message += `\nLooking at today's performance, your portfolio gained $${todaysUpdate.daysGain.toFixed(2)}. 
+    The top gainers for the day were ${todaysUpdate.top3Gainers.join(', ')}. 
+    Unfortunately, there were also some losers, including ${todaysUpdate.top3Losers.join(', ')}. 
+    Overall for the year, your portfolio is down $${todaysUpdate.anualGain.amount.toFixed(2)}. This includes short-term losses of $${todaysUpdate.anualGain.shortTerm.toFixed(2)} and long-term losses of $${todaysUpdate.anualGain.longTerm.toFixed(2)}.`;
 
-        "Now, onto today's update."
+    // Stock Performance
+    message += `\nWithin your stock, ETF, and mutual fund holdings, there was an overall change of ${stockEtfsMfsBonds.change}%. 
+    The top performers today were ${stockEtfsMfsBonds.top3.map(holding => holding.name).join(', ')} while ${stockEtfsMfsBonds.bottom3.map(holding => holding.name).join(', ')} lagged behind.`;
 
-        "We've seen a total gain of $${pf.todaysUpdate.daysGain} for today. Your top three gainers for the day are ${pf.todaysUpdate.top3Gainers[0]}, ${pf.todaysUpdate.top3Gainers[1]}, and ${pf.todaysUpdate.top3Gainers[2]}, while the top three losers are ${pf.todaysUpdate.top3Losers[0]}, ${pf.todaysUpdate.top3Losers[1]}, and ${pf.todaysUpdate.top3Losers[2]}."
+    // Trading Activity
+    const totalAnnualTrades = trades.annual.total;
+    const totalMonthlyTrades = trades.monthly.total;
+    message += `\nThroughout the year, you've made a total of ${totalAnnualTrades} trades. This includes ${trades.annual.buy.count} buys totaling $${trades.annual.buy.amount.toFixed(2)} and ${trades.annual.sell.count} sells totaling $${trades.annual.sell.amount.toFixed(2)}. There were also ${trades.annual.options.total} options trades, with ${trades.annual.options.buy.count} buys and ${trades.annual.options.sell.count} sells specifically for options. Looking at your monthly activity, you've made ${totalMonthlyTrades} trades, with a focus on buying at ${trades.monthly.buy.count} trades for $${trades.monthly.buy.amount.toFixed(2)}.`;
 
-        "Looking at the bigger picture, your annual gain stands at $${pf.todaysUpdate.anualGain.amount}. This includes a short-term loss of $${pf.todaysUpdate.anualGain.shortTerm} and a long-term loss of $${pf.todaysUpdate.anualGain.longTerm}. As for your orders, there have been no transactions filled, cancelled, or expired."
+    // Dividends
+    message += `\nOn the dividend front, you've earned a total of $${dividends.annual.toFixed(2)} in annual dividends and $${dividends.monthly.toFixed(2)} in monthly dividends.`;
 
-        "Regarding your stocks, ETFs, mutual funds, and bonds, there haven't been any specific changes highlighted today among the top or bottom performers."
+    // Conclusion
+    message += `\nThat's a summary of your investment activity. Remember, this is just a quick update, so be sure to review your portfolio for a more detailed breakdown.`;
 
-        "So, while today may not have been the most profitable, remember that we're here to support you through every twist and turn of your financial journey."
-
-        "If you have any questions or concerns about your investments or the market, don't hesitate to reach out. We're always here to help."
-
-        "Thanks for being a valued member of the E*TRADE family. Until next time, take care!"
-
-        *[Soft Chime]*
-    `;
+    return message;
 }
+ */

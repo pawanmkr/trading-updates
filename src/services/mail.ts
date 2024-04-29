@@ -20,7 +20,7 @@ export async function sendEmail(
         secure: true,
         auth: {
             user: 'informme@zohomail.in',
-            pass: 'mynewpassword5526'
+            pass: 'admin@Z0H0'
         }
     });
 
