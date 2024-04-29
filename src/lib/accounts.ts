@@ -15,7 +15,7 @@ import {
     Transaction,
 } from "./account-helper.js";
 import pf from "./portfolio.js";
-import prepareMessage from "../utils/message.js";
+// import prepareMessage from "../utils/message.js";
 import tts from "../services/tts.js";
 import { sendEmail } from "../services/mail.js";
 
@@ -100,9 +100,7 @@ export class EtradeAccount {
                         reject(err);
                     } else {
                         try {
-                            const balances = await parseBalanceResponseXmlToJson(
-                                result as string
-                            );
+                            const balances = await parseBalanceResponseXmlToJson(result as string);
                             resolve(balances);
                         } catch (parseError) {
                             console.error("\nError parsing account balances", parseError);
@@ -225,10 +223,9 @@ export class EtradeAccount {
                     // annual ______________
                     if (txn.transactionType === undefined) {
                         console.log(util.inspect(txn, false, null, true));
-
                     }
 
-                    if (txn.transactionType.includes("Dividend")) {
+                    if (txn.transactionType.includes("Dividend" || "dividend")) {
                         pf.dividends.annual += parseFloat(txn.amount);
                     }
 
@@ -374,7 +371,8 @@ export class EtradeAccount {
 
         balances.forEach((bl) => {
             // _______________ Total Cash Reserve ___________________
-            pf.cashReserveAmount += parseFloat(bl.Computed.cashBuyingPower);
+            pf.cashReserveAmount.set(`${bl.accountId}__${bl.accountType}__${bl.accountDescription}`, parseFloat(bl.Computed.cashAvailableForInvestment));
+
             // _______________ Total Assests value ___________________
             pf.investedAmount += parseFloat(bl.Computed.RealTimeValues.totalAccountValue);
 
@@ -387,7 +385,6 @@ export class EtradeAccount {
         });
 
         // _______________ Round off amounts ___________________
-        pf.cashReserveAmount = Math.round(pf.cashReserveAmount);
         pf.investedAmount = Math.round(pf.investedAmount);
         pf.retirementAccountsValue = Math.round(pf.retirementAccountsValue);
         pf.nonRetirementAccountsValue = Math.round(pf.nonRetirementAccountsValue);
@@ -436,6 +433,7 @@ export class EtradeAccount {
             }
             if (pfr) {
                 pfr.PortfolioResponse.Position.forEach((p) => {
+
                     // _____________________ stocks, etfs, mfs, and bonds _____________________
                     if (p.Product.securityType.includes("EQ" || "MF" || "BOND" || "MMF")) {
                         pf.stockEtfsMfsBonds.change += parseFloat(p.Quick.change);
@@ -453,10 +451,14 @@ export class EtradeAccount {
                         daysGain: parseFloat(p.daysGain),
                     });
 
-                    // ______________________ call/put indicator which one to choose while choosing losers and gainers ______________________
+                    const txnDate = new Date(parseFloat(p.dateAcquired)).getTime();
+                    const currentDate = new Date();
+                    const yearAgoEpochTime = new Date(currentDate.setFullYear(currentDate.getFullYear() - 1)).getTime();
+
+                    // ________________________ check if it is a long term or short term gain ________________________
                     pf.todaysUpdate.anualGain.amount += parseFloat(p.totalGain);
-                    if (p.positionType == "SHORT") pf.todaysUpdate.anualGain.shortTerm += parseFloat(p.totalGain);
-                    if (p.positionType == "LONG") pf.todaysUpdate.anualGain.longTerm += parseFloat(p.totalGain);
+                    if (txnDate > yearAgoEpochTime) pf.todaysUpdate.anualGain.shortTerm += parseFloat(p.totalGain);
+                    if (txnDate < yearAgoEpochTime) pf.todaysUpdate.anualGain.longTerm += parseFloat(p.totalGain);
                 });
             }
 
@@ -524,16 +526,16 @@ export class EtradeAccount {
             await et.constructPortfolio(accounts);
             console.log(util.inspect(pf, false, null, true));
 
-            const message = prepareMessage(pf);
-            console.log("Message", message);
+            // const message = prepareMessage(pf);
+            // console.log("Message", message);
 
-            const audioMessagePath = await tts(message);
-            await sendEmail(
-                "iampawanmkr@gmail.com", // dhaval_p_shah@yahoo.com
-                "Daily Updates",
-                "Please listen to the audio for details.",
-                audioMessagePath
-            );
+            // const audioMessagePath = await tts(message);
+            // await sendEmail(
+            //     "iampawanmkr@gmail.com", // dhaval_p_shah@yahoo.com
+            //     "Daily Updates",
+            //     "Please listen to the audio for details.",
+            //     audioMessagePath
+            // );
         }
     } catch (error) {
         console.error(error);

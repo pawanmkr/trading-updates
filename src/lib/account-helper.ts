@@ -100,69 +100,76 @@ export async function parseBalanceResponseXmlToJson(
             if (err) {
                 reject(err);
             } else {
-                const balanceResponse: BalanceResponse = {
-                    accountId: result.BalanceResponse.accountId[0],
-                    accountType: result.BalanceResponse.accountType[0],
-                    optionLevel: result.BalanceResponse.optionLevel[0],
-                    accountDescription: result.BalanceResponse.accountDescription[0],
-                    quoteMode: result.BalanceResponse.quoteMode[0],
-                    dayTraderStatus: result.BalanceResponse.dayTraderStatus[0],
-                    accountMode: result.BalanceResponse.accountMode[0],
-                    Cash: {
-                        fundsForOpenOrdersCash:
-                            result.BalanceResponse.Cash[0].fundsForOpenOrdersCash[0],
-                        moneyMktBalance: result.BalanceResponse.Cash[0].moneyMktBalance[0],
-                    },
-                    Computed: {
-                        cashAvailableForInvestment:
-                            result.BalanceResponse.Computed[0].cashAvailableForInvestment[0],
-                        cashAvailableForWithdrawal:
-                            result.BalanceResponse.Computed[0].cashAvailableForWithdrawal[0],
-                        totalAvailableForWithdrawal:
-                            result.BalanceResponse.Computed[0].totalAvailableForWithdrawal[0],
-                        netCash: result.BalanceResponse.Computed[0].netCash[0],
-                        cashBalance: result.BalanceResponse.Computed[0].cashBalance[0],
-                        settledCashForInvestment:
-                            result.BalanceResponse.Computed[0].settledCashForInvestment[0],
-                        unSettledCashForInvestment:
-                            result.BalanceResponse.Computed[0].unSettledCashForInvestment[0],
-                        fundsWithheldFromPurchasePower:
-                            result.BalanceResponse.Computed[0]
-                                .fundsWithheldFromPurchasePower[0],
-                        fundsWithheldFromWithdrawal:
-                            result.BalanceResponse.Computed[0].fundsWithheldFromWithdrawal[0],
-                        marginBuyingPower:
-                            result.BalanceResponse.Computed[0].marginBuyingPower[0],
-                        cashBuyingPower:
-                            result.BalanceResponse.Computed[0].cashBuyingPower[0],
-                        dtMarginBuyingPower:
-                            result.BalanceResponse.Computed[0].dtMarginBuyingPower[0],
-                        dtCashBuyingPower:
-                            result.BalanceResponse.Computed[0].dtCashBuyingPower[0],
-                        shortAdjustBalance:
-                            result.BalanceResponse.Computed[0].shortAdjustBalance[0],
-                        accountBalance:
-                            result.BalanceResponse.Computed[0].accountBalance[0],
-                        OpenCalls: {
-                            minEquityCall:
-                                result.BalanceResponse.Computed[0].OpenCalls[0].minEquityCall[0],
-                            fedCall: result.BalanceResponse.Computed[0].OpenCalls[0].fedCall[0],
-                            cashCall: result.BalanceResponse.Computed[0].OpenCalls[0].cashCall[0],
-                            houseCall: result.BalanceResponse.Computed[0].OpenCalls[0].houseCall[0],
+                try {
+                    const balanceResponse: BalanceResponse = {
+                        accountId: result.BalanceResponse.accountId[0],
+                        accountType: result.BalanceResponse.accountType[0],
+                        optionLevel: result.BalanceResponse.optionLevel[0],
+                        accountDescription: result.BalanceResponse.accountDescription[0],
+                        quoteMode: result.BalanceResponse.quoteMode[0],
+                        dayTraderStatus: result.BalanceResponse.dayTraderStatus[0],
+                        accountMode: result.BalanceResponse.accountMode[0],
+                        Cash: {
+                            fundsForOpenOrdersCash:
+                                result.BalanceResponse.Cash[0]?.fundsForOpenOrdersCash[0],
+                            moneyMktBalance: result.BalanceResponse.Cash[0]?.moneyMktBalance[0],
                         },
-                        RealTimeValues: {
-                            totalAccountValue:
-                                result.BalanceResponse.Computed[0].RealTimeValues[0]
-                                    .totalAccountValue[0],
-                            netMv: result.BalanceResponse.Computed[0].RealTimeValues[0].netMv[0],
-                            netMvLong:
-                                result.BalanceResponse.Computed[0].RealTimeValues[0].netMvLong[0],
-                            netMvShort:
-                                result.BalanceResponse.Computed[0].RealTimeValues[0].netMvShort[0],
+                        Computed: {
+                            cashAvailableForInvestment:
+                                result.BalanceResponse.Computed[0]?.cashAvailableForInvestment[0],
+                            cashAvailableForWithdrawal:
+                                result.BalanceResponse.Computed[0]?.cashAvailableForWithdrawal[0],
+                            totalAvailableForWithdrawal:
+                                result.BalanceResponse.Computed[0]?.totalAvailableForWithdrawal[0],
+                            netCash: result.BalanceResponse.Computed[0]?.netCash[0],
+                            cashBalance: result.BalanceResponse.Computed[0]?.cashBalance[0],
+                            settledCashForInvestment:
+                                result.BalanceResponse.Computed[0]?.settledCashForInvestment[0],
+                            unSettledCashForInvestment:
+                                result.BalanceResponse.Computed[0]?.unSettledCashForInvestment[0],
+                            fundsWithheldFromPurchasePower:
+                                result.BalanceResponse.Computed[0]
+                                    .fundsWithheldFromPurchasePower[0],
+                            fundsWithheldFromWithdrawal:
+                                result.BalanceResponse.Computed[0]?.fundsWithheldFromWithdrawal[0],
+                            marginBuyingPower:
+                                result.BalanceResponse.Computed[0]?.marginBuyingPower[0],
+                            cashBuyingPower:
+                                result.BalanceResponse.Computed[0]?.cashBuyingPower[0],
+                            dtMarginBuyingPower:
+                                result.BalanceResponse.Computed[0]?.dtMarginBuyingPower[0],
+                            dtCashBuyingPower:
+                                result.BalanceResponse.Computed[0]?.dtCashBuyingPower[0],
+                            shortAdjustBalance:
+                                result.BalanceResponse.Computed[0]?.shortAdjustBalance[0],
+                            accountBalance:
+                                result.BalanceResponse.Computed[0]?.accountBalance[0],
+                            OpenCalls: {
+                                minEquityCall:
+                                    result.BalanceResponse.Computed[0]?.OpenCalls[0]?.minEquityCall[0],
+                                fedCall: result.BalanceResponse.Computed[0]?.OpenCalls[0]?.fedCall[0],
+                                cashCall: result.BalanceResponse.Computed[0]?.OpenCalls[0]?.cashCall[0],
+                                houseCall: result.BalanceResponse.Computed[0]?.OpenCalls[0]?.houseCall[0],
+                            },
+                            RealTimeValues: {
+                                totalAccountValue:
+                                    result.BalanceResponse.Computed[0]?.RealTimeValues[0]
+                                        .totalAccountValue[0],
+                                netMv: result.BalanceResponse.Computed[0]?.RealTimeValues[0]?.netMv[0],
+                                netMvLong:
+                                    result.BalanceResponse.Computed[0]?.RealTimeValues[0]?.netMvLong[0],
+                                netMvShort:
+                                    result.BalanceResponse.Computed[0]?.RealTimeValues[0]?.netMvShort[0],
+                            },
                         },
-                    },
-                };
-                resolve(balanceResponse);
+                    };
+                    resolve(balanceResponse);
+                } catch (error) {
+                    console.log(xmlData);
+                    console.log(util.inspect(result, false, null, true /* enable colors */));
+                    console.error(error);
+                    process.exit(1);
+                }
             }
         });
     });
@@ -502,6 +509,7 @@ export function parseTransactionsResponseXmlToJson(xmlData): Promise<Transaction
                 result.TransactionListResponse.Transaction.forEach((transaction: Transaction) => {
                     try {
                         if (transaction.brokerage[0].product[0].securityType === undefined) {
+                            // console.log(util.inspect(transaction, false, null, true /* enable colors */));
                             console.log("Skipping transaction with no product data");
                         }
                         else {

@@ -9,7 +9,7 @@ export interface Portfolio {
     nonRetirementAccounts: number;
     nonRetirementAccountsValue: number;
     investedAmount: number;
-    cashReserveAmount: number;
+    cashReserveAmount: Map<string, number>;
     todaysUpdate: TodaysUpdate;
     stockEtfsMfsBonds: StockEtfsMfsBonds;
     dividends: {
@@ -127,7 +127,7 @@ const pf: Portfolio = {
     nonRetirementAccounts: 0,
     nonRetirementAccountsValue: 0,
     investedAmount: 0,
-    cashReserveAmount: 0,
+    cashReserveAmount: new Map<string, number>(),
     todaysUpdate: {
         daysGain: 0,
         top3Gainers: [],

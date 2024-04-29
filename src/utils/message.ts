@@ -1,4 +1,4 @@
-import { Portfolio } from "src/lib/portfolio";
+/* import { Portfolio } from "src/lib/portfolio";
 
 export default function prepareMessage(pf: Portfolio): string {
     const {
@@ -45,3 +45,4 @@ export default function prepareMessage(pf: Portfolio): string {
 
     return message;
 }
+ */
