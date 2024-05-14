@@ -1,48 +1,49 @@
-/* import { Portfolio } from "src/lib/portfolio";
+import { Portfolio } from "src/lib/portfolio";
 
 export default function prepareMessage(pf: Portfolio): string {
-    const {
-        day,
-        date,
-        totalAccounts,
-        retirementAccounts,
-        retirementAccountsValue,
-        nonRetirementAccounts,
-        nonRetirementAccountsValue,
-        investedAmount,
-        cashReserveAmount,
-        todaysUpdate,
-        stockEtfsMfsBonds,
-        dividends,
-        trades,
-    } = pf;
+    const { day, date, totalAccounts, retirementAccounts, nonRetirementAccounts, investedAmount, cashReserveAmount, todaysUpdate, dividends } = pf;
 
-    // Craft the message
+    let message = `Welcome to E-Trade. Today is ${date}, ${day}, and here is the update from your portfolio aftermarket close.\n\n`;
 
-    let message = `Hi there! This is your investment update for ${day}, ${date}. 
-    Across your ${totalAccounts} accounts, your total investment sits at $${investedAmount.toFixed(2)}. This includes $${retirementAccountsValue.toFixed(2)} in your ${retirementAccounts} retirement accounts, making up ${((retirementAccountsValue / investedAmount) * 100).toFixed(1)}% of the portfolio, and $${nonRetirementAccountsValue.toFixed(2)} in your ${nonRetirementAccounts} non-retirement accounts. You also have $${cashReserveAmount.toFixed(2)} in cash reserves.`;
+    message += `First, let me confirm what you have here. You have total ${totalAccounts} accounts here. ${retirementAccounts} retirement and ${nonRetirementAccounts} non-retirement account.\n`;
+    message += `In terms of portfolio size, you have total $${investedAmount} in invested assets and additionally $${calculateTotalCash(cashReserveAmount)} cash in your accounts as of today. Some of them are used for naked puts you sold.\n\n`;
 
-    // Today's Performance
-    message += `\nLooking at today's performance, your portfolio gained $${todaysUpdate.daysGain.toFixed(2)}. 
-    The top gainers for the day were ${todaysUpdate.top3Gainers.join(', ')}. 
-    Unfortunately, there were also some losers, including ${todaysUpdate.top3Losers.join(', ')}. 
-    Overall for the year, your portfolio is down $${todaysUpdate.anualGain.amount.toFixed(2)}. This includes short-term losses of $${todaysUpdate.anualGain.shortTerm.toFixed(2)} and long-term losses of $${todaysUpdate.anualGain.longTerm.toFixed(2)}.`;
+    message += `Now let's see major changes in your portfolio for today.\n\n`;
 
-    // Stock Performance
-    message += `\nWithin your stock, ETF, and mutual fund holdings, there was an overall change of ${stockEtfsMfsBonds.change}%. 
-    The top performers today were ${stockEtfsMfsBonds.top3.map(holding => holding.name).join(', ')} while ${stockEtfsMfsBonds.bottom3.map(holding => holding.name).join(', ')} lagged behind.`;
+    message += `Let's talk about amount changes. Your portfolio grew today by $${todaysUpdate.daysGain}.\n`;
+    message += `Your 3 largest gainers today in terms of dollars were ${getTopGainers(todaysUpdate.top3Gainers)} whereas Biggest Losers were ${getTopLosers(todaysUpdate.top3Losers)}.\n\n`;
 
-    // Trading Activity
-    const totalAnnualTrades = trades.annual.total;
-    const totalMonthlyTrades = trades.monthly.total;
-    message += `\nThroughout the year, you've made a total of ${totalAnnualTrades} trades. This includes ${trades.annual.buy.count} buys totaling $${trades.annual.buy.amount.toFixed(2)} and ${trades.annual.sell.count} sells totaling $${trades.annual.sell.amount.toFixed(2)}. There were also ${trades.annual.options.total} options trades, with ${trades.annual.options.buy.count} buys and ${trades.annual.options.sell.count} sells specifically for options. Looking at your monthly activity, you've made ${totalMonthlyTrades} trades, with a focus on buying at ${trades.monthly.buy.count} trades for $${trades.monthly.buy.amount.toFixed(2)}.`;
+    message += `Now let's talk about annual dividends.\n`;
+    message += `You are expected to get $${dividends.annual} in dividends this year based on your current investment. You have received $${dividends.monthly} as of today.\n\n`;
 
-    // Dividends
-    message += `\nOn the dividend front, you've earned a total of $${dividends.annual.toFixed(2)} in annual dividends and $${dividends.monthly.toFixed(2)} in monthly dividends.`;
+    message += `Now, let's talk about annual gain or loss.\n`;
+    message += `Your annual gain so far is $${todaysUpdate.anualGain.amount} whereas $${todaysUpdate.anualGain.shortTerm} is a short-term gain and $${todaysUpdate.anualGain.longTerm} is long-term gain.\n\n`;
 
-    // Conclusion
-    message += `\nThat's a summary of your investment activity. Remember, this is just a quick update, so be sure to review your portfolio for a more detailed breakdown.`;
+    message += `Let me update you now for your orders.\n`;
+    message += `Today you entered ${todaysUpdate.orders.total} orders online. ${todaysUpdate.orders.filled} of them got filled, ${todaysUpdate.orders.cancelled} got cancelled, and ${todaysUpdate.orders.expired} expired at the end of the day.\n\n`;
+
+    message += `Now let's talk about unused cash.\n`;
+    message += `You have a cash of $${calculateTotalCash(cashReserveAmount)} in your account which can be used to buy various equities without dipping into margin balance.\n\n`;
+
+    message += `Hope this helps to know what happened today.\n`;
 
     return message;
 }
- */
+
+function calculateTotalCash(cashReserveAmount: Map<string, number>): number {
+    let totalCash = 0;
+    cashReserveAmount.forEach((value) => {
+        if (!isNaN(value)) {
+            totalCash += value;
+        }
+    });
+    return totalCash;
+}
+
+function getTopGainers(top3Gainers: string[]): string {
+    return top3Gainers.slice(0, 3).join(", ");
+}
+
+function getTopLosers(top3Losers: string[]): string {
+    return top3Losers.slice(0, 3).join(", ");
+}

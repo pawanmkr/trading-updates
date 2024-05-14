@@ -1,0 +1,3871 @@
+{
+    [
+        [
+            {
+                "transactionId": "24121500388024",
+                "accountId": "133277828",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "0.04",
+                "description": "MORGAN STANLEY BANK N.A. (Period 04/01-04/30)",
+                "transactionType": "Interest",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "MSBNK",
+                                "securityType": "MMF"
+                            }
+                        ],
+                        "quantity": [
+                            "-0.04"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "MSBNK"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24121500388024?storeId=0"
+            },
+            {
+                "transactionId": "24121500388023",
+                "accountId": "133277828",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "0.01",
+                "description": "MORGAN STANLEY PRIVATE BANK NA (Period 04/01-04/30)",
+                "transactionType": "Interest",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "MSPBNA",
+                                "securityType": "MMF"
+                            }
+                        ],
+                        "quantity": [
+                            "-0.01"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "MSPBNA"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24121500388023?storeId=0"
+            },
+            {
+                "transactionId": "24121500388020",
+                "accountId": "133277828",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "46.15",
+                "description": "ANNALY CAPITAL MANAGEMENT INC REC 04/30/24 PAY 04/30/24 RATE 0.00000000 QTY 0.00000000",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "NLY",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "NLY"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24121500388020?storeId=0"
+            },
+            {
+                "transactionId": "24121500388019",
+                "accountId": "133277828",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "12",
+                "description": "CLOUGH GLOBAL OPPORTUNITIES",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "GLO",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "GLO"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24121500388019?storeId=0"
+            },
+            {
+                "transactionId": "24117500071829",
+                "accountId": "133277828",
+                "transactionDate": "1714166253000",
+                "postDate": "1714374000000",
+                "amount": "185.63",
+                "description": "CALL CLF 01/17/25 20.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "CLF",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "20.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "1.86"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "CLF Jan 17 '25 $20 Call"
+                        ],
+                        "settlementDate": [
+                            "1714374000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24117500071829?storeId=0"
+            },
+            {
+                "transactionId": "24117500071828",
+                "accountId": "133277828",
+                "transactionDate": "1714166073000",
+                "postDate": "1714460400000",
+                "amount": "-358.8",
+                "description": "CLEVELAND CLIFFS INC UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "CLF",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "20"
+                        ],
+                        "price": [
+                            "17.94"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "CLF"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24117500071828?storeId=0"
+            },
+            {
+                "transactionId": "24115500077891",
+                "accountId": "133277828",
+                "transactionDate": "1713991080000",
+                "postDate": "1714028400000",
+                "amount": "296.63",
+                "description": "CALL ZM 01/17/25 80.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ZM",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "80.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "2.97"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "ZM Jan 17 '25 $80 Call"
+                        ],
+                        "settlementDate": [
+                            "1714028400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24115500077891?storeId=0"
+            },
+            {
+                "transactionId": "24115500077890",
+                "accountId": "133277828",
+                "transactionDate": "1713989134000",
+                "postDate": "1714028400000",
+                "amount": "125.63",
+                "description": "CALL SLV 01/17/25 30.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "SLV",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "30.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "1.26"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "SLV Jan 17 '25 $30 Call"
+                        ],
+                        "settlementDate": [
+                            "1714028400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24115500077890?storeId=0"
+            },
+            {
+                "transactionId": "24114500066946",
+                "accountId": "133277828",
+                "transactionDate": "1713911422000",
+                "postDate": "1714028400000",
+                "amount": "-2497",
+                "description": "ISHARES SILVER SHARES UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "SLV",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "100"
+                        ],
+                        "price": [
+                            "24.97"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "SLV"
+                        ],
+                        "settlementDate": [
+                            "1714028400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24114500066946?storeId=0"
+            },
+            {
+                "transactionId": "24114500066945",
+                "accountId": "133277828",
+                "transactionDate": "1713910604000",
+                "postDate": "1714028400000",
+                "amount": "-1499.6",
+                "description": "CLEVELAND CLIFFS INC UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "CLF",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "80"
+                        ],
+                        "price": [
+                            "18.745"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "CLF"
+                        ],
+                        "settlementDate": [
+                            "1714028400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24114500066945?storeId=0"
+            },
+            {
+                "transactionId": "24113500074557",
+                "accountId": "133277828",
+                "transactionDate": "1713824367000",
+                "postDate": "1713942000000",
+                "amount": "-531.86",
+                "description": "ANNALY CAPITAL MANAGEMENT INC UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "NLY",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "29"
+                        ],
+                        "price": [
+                            "18.34"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "NLY"
+                        ],
+                        "settlementDate": [
+                            "1713942000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24113500074557?storeId=0"
+            },
+            {
+                "transactionId": "24113500074556",
+                "accountId": "133277828",
+                "transactionDate": "1713821930000",
+                "postDate": "1713942000000",
+                "amount": "-112.38",
+                "description": "JPMORGAN EQUITY PREMIUM INCO UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "JEPI",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "2"
+                        ],
+                        "price": [
+                            "56.19"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "JEPI"
+                        ],
+                        "settlementDate": [
+                            "1713942000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24113500074556?storeId=0"
+            },
+            {
+                "transactionId": "24109500077581",
+                "accountId": "133277828",
+                "transactionDate": "1713423600000",
+                "postDate": "1713423600000",
+                "amount": "9.9",
+                "description": "PROSPECT CAPITAL CORP",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "PSEC",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "PSEC"
+                        ],
+                        "settlementDate": [
+                            "1713423600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24109500077581?storeId=0"
+            },
+            {
+                "transactionId": "24103500076273",
+                "accountId": "133277828",
+                "transactionDate": "1712951795000",
+                "postDate": "1713250800000",
+                "amount": "-3942",
+                "description": "WESTERN UN CO UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "WU",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "300"
+                        ],
+                        "price": [
+                            "13.14"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "WU"
+                        ],
+                        "settlementDate": [
+                            "1713250800000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24103500076273?storeId=0"
+            },
+            {
+                "transactionId": "24103500076272",
+                "accountId": "133277828",
+                "transactionDate": "1712951795000",
+                "postDate": "1713164400000",
+                "amount": "139.9",
+                "description": "CALL WU 01/17/25 15.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "WU",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "15.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-3"
+                        ],
+                        "price": [
+                            "0.47"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "1.09"
+                        ],
+                        "displaySymbol": [
+                            "WU Jan 17 '25 $15 Call"
+                        ],
+                        "settlementDate": [
+                            "1713164400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24103500076272?storeId=0"
+            },
+            {
+                "transactionId": "24095500134349",
+                "accountId": "133277828",
+                "transactionDate": "1712214000000",
+                "postDate": "1712214000000",
+                "amount": "33.83",
+                "description": "JPMORGAN EQUITY PREMIUM INCO",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "JEPI",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "JEPI"
+                        ],
+                        "settlementDate": [
+                            "1712214000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dbGvnWMgmMH_FuhIKp_NGQ/transactions/24095500134349?storeId=0"
+            }
+        ],
+        [
+            {
+                "transactionId": "24122200004649",
+                "accountId": "133278868",
+                "transactionDate": "1714551951000",
+                "postDate": "0",
+                "amount": "-1400",
+                "description": "JETBLUE AWYS CORP COM PUT ASN MAY UNSOLICITED TRADE OPSGK0000241211231000516",
+                "transactionType": "Bought",
+                "memo": " ",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "JBLU",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "200"
+                        ],
+                        "price": [
+                            "7"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            " "
+                        ],
+                        "settlementDate": [
+                            "0"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24122200004649?storeId=0"
+            },
+            {
+                "transactionId": "24122200003037",
+                "accountId": "133278868",
+                "transactionDate": "1714551947000",
+                "postDate": "0",
+                "amount": "0",
+                "description": "PUT JBLU 05/17/24 7.000",
+                "transactionType": "Option Assignment",
+                "memo": " ",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "JBLU",
+                                "securityType": "OPTN",
+                                "callPut": "PUT",
+                                "expiryYear": "24",
+                                "expiryMonth": "5",
+                                "expiryDay": "17",
+                                "strikePrice": "7.00"
+                            }
+                        ],
+                        "quantity": [
+                            "2"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            " "
+                        ],
+                        "settlementDate": [
+                            "0"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24122200003037?storeId=0"
+            },
+            {
+                "transactionId": "24121500388248",
+                "accountId": "133278868",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "0.53",
+                "description": "MORGAN STANLEY PRIVATE BANK NA (Period 04/01-04/30)",
+                "transactionType": "Interest",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "MSPBNA",
+                                "securityType": "MMF"
+                            }
+                        ],
+                        "quantity": [
+                            "-0.53"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "MSPBNA"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24121500388248?storeId=0"
+            },
+            {
+                "transactionId": "24121500388247",
+                "accountId": "133278868",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "1.32",
+                "description": "MORGAN STANLEY BANK N.A. (Period 04/01-04/30)",
+                "transactionType": "Interest",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "MSBNK",
+                                "securityType": "MMF"
+                            }
+                        ],
+                        "quantity": [
+                            "-1.32"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "MSBNK"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24121500388247?storeId=0"
+            },
+            {
+                "transactionId": "24121500388245",
+                "accountId": "133278868",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "206.76",
+                "description": "GLOBAL X NASD 1OO COV CALL",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "QYLD",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "QYLD"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24121500388245?storeId=0"
+            },
+            {
+                "transactionId": "24121500388244",
+                "accountId": "133278868",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "9.6",
+                "description": "CLOUGH GLOBAL OPPORTUNITIES",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "GLO",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "GLO"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24121500388244?storeId=0"
+            },
+            {
+                "transactionId": "24121500388243",
+                "accountId": "133278868",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "81.25",
+                "description": "ANNALY CAPITAL MANAGEMENT INC REC 04/30/24 PAY 04/30/24 RATE 0.00000000 QTY 0.00000000",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "NLY",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "NLY"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24121500388243?storeId=0"
+            },
+            {
+                "transactionId": "24121500388242",
+                "accountId": "133278868",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "136.16",
+                "description": "GLOBAL X S&P 500 COVE CALL E",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "XYLD",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "XYLD"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24121500388242?storeId=0"
+            },
+            {
+                "transactionId": "24121500388241",
+                "accountId": "133278868",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "32.56",
+                "description": "GLOBAL X RUSSELL 2000 COV CL",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "RYLD",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "RYLD"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24121500388241?storeId=0"
+            },
+            {
+                "transactionId": "24121500388240",
+                "accountId": "133278868",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "152",
+                "description": "B & G FOODS INC REC 04/30/24 PAY 04/30/24 RATE 0.00000000 QTY 0.00000000",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "BGS",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "BGS"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24121500388240?storeId=0"
+            },
+            {
+                "transactionId": "24121500388239",
+                "accountId": "133278868",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "77",
+                "description": "CHIMERA INVESTMENT CORPORATION REC 04/30/24 PAY 04/30/24 RATE 0.00000000 QTY 0.00000000",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "CIM",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "CIM"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24121500388239?storeId=0"
+            },
+            {
+                "transactionId": "24115500077919",
+                "accountId": "133278868",
+                "transactionDate": "1713991438000",
+                "postDate": "1714028400000",
+                "amount": "-89.36",
+                "description": "CALL GILD 01/17/25 85.000",
+                "transactionType": "Bought To Cover",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "GILD",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "85.00"
+                            }
+                        ],
+                        "quantity": [
+                            "1"
+                        ],
+                        "price": [
+                            "0.89"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.36"
+                        ],
+                        "displaySymbol": [
+                            "GILD Jan 17 '25 $85 Call"
+                        ],
+                        "settlementDate": [
+                            "1714028400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24115500077919?storeId=0"
+            },
+            {
+                "transactionId": "24113500074582",
+                "accountId": "133278868",
+                "transactionDate": "1713821611000",
+                "postDate": "1713855600000",
+                "amount": "180.63",
+                "description": "CALL ZM 08/16/24 70.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ZM",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "8",
+                                "expiryDay": "16",
+                                "strikePrice": "70.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "1.81"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "ZM Aug 16 '24 $70 Call"
+                        ],
+                        "settlementDate": [
+                            "1713855600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24113500074582?storeId=0"
+            },
+            {
+                "transactionId": "24113500074581",
+                "accountId": "133278868",
+                "transactionDate": "1713819690000",
+                "postDate": "1713855600000",
+                "amount": "-43.08",
+                "description": "PUT BAC 07/19/24 30.000",
+                "transactionType": "Bought To Cover",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "BAC",
+                                "securityType": "OPTN",
+                                "callPut": "PUT",
+                                "expiryYear": "24",
+                                "expiryMonth": "7",
+                                "expiryDay": "19",
+                                "strikePrice": "30.00"
+                            }
+                        ],
+                        "quantity": [
+                            "3"
+                        ],
+                        "price": [
+                            "0.14"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "1.08"
+                        ],
+                        "displaySymbol": [
+                            "BAC Jul 19 '24 $30 Put"
+                        ],
+                        "settlementDate": [
+                            "1713855600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24113500074581?storeId=0"
+            },
+            {
+                "transactionId": "24113500074580",
+                "accountId": "133278868",
+                "transactionDate": "1713816396000",
+                "postDate": "1713855600000",
+                "amount": "309.63",
+                "description": "CALL TWLO 05/24/24 60.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "TWLO",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "5",
+                                "expiryDay": "24",
+                                "strikePrice": "60.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "3.1"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "TWLO May 24 '24 $60 Call"
+                        ],
+                        "settlementDate": [
+                            "1713855600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24113500074580?storeId=0"
+            },
+            {
+                "transactionId": "24113500074579",
+                "accountId": "133278868",
+                "transactionDate": "1713769200000",
+                "postDate": "1713510000000",
+                "amount": "0",
+                "description": "PUT TWLO 04/19/24 60.000",
+                "transactionType": "Option Assignment",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "TWLO",
+                                "securityType": "OPTN",
+                                "callPut": "PUT",
+                                "expiryYear": "24",
+                                "expiryMonth": "4",
+                                "expiryDay": "19",
+                                "strikePrice": "60.00"
+                            }
+                        ],
+                        "quantity": [
+                            "1"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "TWLO Apr 19 '24 $60 Put"
+                        ],
+                        "settlementDate": [
+                            "1713510000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24113500074579?storeId=0"
+            },
+            {
+                "transactionId": "24113500074578",
+                "accountId": "133278868",
+                "transactionDate": "1713769200000",
+                "postDate": "1713855600000",
+                "amount": "-6000",
+                "description": "TWILIO INC CL A",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "TWLO",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "100"
+                        ],
+                        "price": [
+                            "60"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "TWLO"
+                        ],
+                        "settlementDate": [
+                            "1713855600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24113500074578?storeId=0"
+            },
+            {
+                "transactionId": "24109500077600",
+                "accountId": "133278868",
+                "transactionDate": "1713423600000",
+                "postDate": "1713423600000",
+                "amount": "55.79",
+                "description": "EATON VANCE LTD DURATION FD",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "EVV",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "EVV"
+                        ],
+                        "settlementDate": [
+                            "1713423600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24109500077600?storeId=0"
+            },
+            {
+                "transactionId": "24109500077599",
+                "accountId": "133278868",
+                "transactionDate": "1713423600000",
+                "postDate": "1713423600000",
+                "amount": "35.7",
+                "description": "PROSPECT CAPITAL CORP",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "PSEC",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "PSEC"
+                        ],
+                        "settlementDate": [
+                            "1713423600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24109500077599?storeId=0"
+            },
+            {
+                "transactionId": "24102500104059",
+                "accountId": "133278868",
+                "transactionDate": "1712874841000",
+                "postDate": "1712905200000",
+                "amount": "209.26",
+                "description": "CALL XPEV 01/17/25 12.500",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "XPEV",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "12.50"
+                            }
+                        ],
+                        "quantity": [
+                            "-2"
+                        ],
+                        "price": [
+                            "1.05"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.73"
+                        ],
+                        "displaySymbol": [
+                            "XPEV Jan 17 '25 $12.50 Call"
+                        ],
+                        "settlementDate": [
+                            "1712905200000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24102500104059?storeId=0"
+            },
+            {
+                "transactionId": "24102500104058",
+                "accountId": "133278868",
+                "transactionDate": "1712874714000",
+                "postDate": "1712905200000",
+                "amount": "-4.02",
+                "description": "CALL XPEV 06/21/24 30.000",
+                "transactionType": "Bought To Cover",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "XPEV",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "6",
+                                "expiryDay": "21",
+                                "strikePrice": "30.00"
+                            }
+                        ],
+                        "quantity": [
+                            "2"
+                        ],
+                        "price": [
+                            "0.02"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.02"
+                        ],
+                        "displaySymbol": [
+                            "XPEV Jun 21 '24 $30 Call"
+                        ],
+                        "settlementDate": [
+                            "1712905200000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24102500104058?storeId=0"
+            },
+            {
+                "transactionId": "24101500071106",
+                "accountId": "133278868",
+                "transactionDate": "1712785564000",
+                "postDate": "1712905200000",
+                "amount": "-6085.5",
+                "description": "ISHARES RUSSELL MIDCAP V ETF UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "IWS",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "50"
+                        ],
+                        "price": [
+                            "121.71"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "IWS"
+                        ],
+                        "settlementDate": [
+                            "1712905200000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24101500071106?storeId=0"
+            },
+            {
+                "transactionId": "24101500071105",
+                "accountId": "133278868",
+                "transactionDate": "1712779397000",
+                "postDate": "1712818800000",
+                "amount": "-850.72",
+                "description": "CALL MDT 01/17/25 87.500",
+                "transactionType": "Bought To Cover",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "MDT",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "87.50"
+                            }
+                        ],
+                        "quantity": [
+                            "2"
+                        ],
+                        "price": [
+                            "4.25"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.72"
+                        ],
+                        "displaySymbol": [
+                            "MDT Jan 17 '25 $87.50 Call"
+                        ],
+                        "settlementDate": [
+                            "1712818800000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24101500071105?storeId=0"
+            },
+            {
+                "transactionId": "24101500071104",
+                "accountId": "133278868",
+                "transactionDate": "1712779324000",
+                "postDate": "1712905200000",
+                "amount": "-11077",
+                "description": "ABBOTT LABORATORIES UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ABT",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "100"
+                        ],
+                        "price": [
+                            "110.77"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "ABT"
+                        ],
+                        "settlementDate": [
+                            "1712905200000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24101500071104?storeId=0"
+            },
+            {
+                "transactionId": "24101500071103",
+                "accountId": "133278868",
+                "transactionDate": "1712779324000",
+                "postDate": "1712818800000",
+                "amount": "1036.63",
+                "description": "CALL ABT 01/17/25 110.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ABT",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "110.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "10.37"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "ABT Jan 17 '25 $110 Call"
+                        ],
+                        "settlementDate": [
+                            "1712818800000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24101500071103?storeId=0"
+            },
+            {
+                "transactionId": "24100500076880",
+                "accountId": "133278868",
+                "transactionDate": "1712695906000",
+                "postDate": "1712732400000",
+                "amount": "-10.02",
+                "description": "CALL FVRR 06/21/24 40.000",
+                "transactionType": "Bought To Cover",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "FVRR",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "6",
+                                "expiryDay": "21",
+                                "strikePrice": "40.00"
+                            }
+                        ],
+                        "quantity": [
+                            "2"
+                        ],
+                        "price": [
+                            "0.05"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.02"
+                        ],
+                        "displaySymbol": [
+                            "FVRR Jun 21 '24 $40 Call"
+                        ],
+                        "settlementDate": [
+                            "1712732400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24100500076880?storeId=0"
+            },
+            {
+                "transactionId": "24096500148897",
+                "accountId": "133278868",
+                "transactionDate": "1712348716000",
+                "postDate": "1712646000000",
+                "amount": "-648.56",
+                "description": "OUSTER INC NEW UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "OUST",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "67"
+                        ],
+                        "price": [
+                            "9.68"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "OUST"
+                        ],
+                        "settlementDate": [
+                            "1712646000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24096500148897?storeId=0"
+            },
+            {
+                "transactionId": "24095500134429",
+                "accountId": "133278868",
+                "transactionDate": "1712214000000",
+                "postDate": "1712214000000",
+                "amount": "69.73",
+                "description": "JPMORGAN EQUITY PREMIUM INCO",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "JEPI",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "JEPI"
+                        ],
+                        "settlementDate": [
+                            "1712214000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24095500134429?storeId=0"
+            },
+            {
+                "transactionId": "24095500134428",
+                "accountId": "133278868",
+                "transactionDate": "1712214000000",
+                "postDate": "1712214000000",
+                "amount": "42.73",
+                "description": "JPM NASDAQ EQUITY PREMIUM",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "JEPQ",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "JEPQ"
+                        ],
+                        "settlementDate": [
+                            "1712214000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24095500134428?storeId=0"
+            },
+            {
+                "transactionId": "24094500106244",
+                "accountId": "133278868",
+                "transactionDate": "1712183720000",
+                "postDate": "1712214000000",
+                "amount": "-93.45",
+                "description": "CALL GILD 06/21/24 82.500",
+                "transactionType": "Bought To Cover",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "GILD",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "6",
+                                "expiryDay": "21",
+                                "strikePrice": "82.50"
+                            }
+                        ],
+                        "quantity": [
+                            "4"
+                        ],
+                        "price": [
+                            "0.23"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "1.45"
+                        ],
+                        "displaySymbol": [
+                            "GILD Jun 21 '24 $82.50 Call"
+                        ],
+                        "settlementDate": [
+                            "1712214000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24094500106244?storeId=0"
+            },
+            {
+                "transactionId": "24093500116618",
+                "accountId": "133278868",
+                "transactionDate": "1712041200000",
+                "postDate": "1712041200000",
+                "amount": "0",
+                "description": "NOVO NORDISK A/S ADR ADJ GROSS DIV AMOUNT 2.51 FOREIGN TAX PAID IS 2.51",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "NVO",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "NVO"
+                        ],
+                        "settlementDate": [
+                            "1712041200000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24093500116618?storeId=0"
+            },
+            {
+                "transactionId": "24093500116617",
+                "accountId": "133278868",
+                "transactionDate": "1712041200000",
+                "postDate": "1712041200000",
+                "amount": "6.78",
+                "description": "NOVO NORDISK A/S ADR",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "NVO",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "NVO"
+                        ],
+                        "settlementDate": [
+                            "1712041200000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24093500116617?storeId=0"
+            },
+            {
+                "transactionId": "24093500116616",
+                "accountId": "133278868",
+                "transactionDate": "1712041200000",
+                "postDate": "1712041200000",
+                "amount": "-0.15",
+                "description": "NOVO NORDISK A/S ADR AGENT CUSTODY FEE $0.0150/SH",
+                "transactionType": "MISC",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "NVO",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "NVO"
+                        ],
+                        "settlementDate": [
+                            "1712041200000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24093500116616?storeId=0"
+            },
+            {
+                "transactionId": "24093500116614",
+                "accountId": "133278868",
+                "transactionDate": "1712094333000",
+                "postDate": "1712127600000",
+                "amount": "582.63",
+                "description": "CALL MDT 01/17/25 87.500",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "MDT",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "87.50"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "5.83"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "MDT Jan 17 '25 $87.50 Call"
+                        ],
+                        "settlementDate": [
+                            "1712127600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24093500116614?storeId=0"
+            },
+            {
+                "transactionId": "24093500116613",
+                "accountId": "133278868",
+                "transactionDate": "1712094333000",
+                "postDate": "1712214000000",
+                "amount": "-8533",
+                "description": "MEDTRONIC PLC SHS UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "MDT",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "100"
+                        ],
+                        "price": [
+                            "85.33"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "MDT"
+                        ],
+                        "settlementDate": [
+                            "1712214000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24093500116613?storeId=0"
+            },
+            {
+                "transactionId": "24092500276040",
+                "accountId": "133278868",
+                "transactionDate": "1711954800000",
+                "postDate": "1711954800000",
+                "amount": "21.6",
+                "description": "NUVEEN CREDIT STRAT INC FD",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "JQC",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "JQC"
+                        ],
+                        "settlementDate": [
+                            "1711954800000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/07N-OeLvZfvOvDa2-eV8aQ/transactions/24092500276040?storeId=0"
+            }
+        ],
+        [
+            {
+                "transactionId": "24121500388939",
+                "accountId": "133282028",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "1.89",
+                "description": "MORGAN STANLEY BANK N.A. (Period 04/01-04/30)",
+                "transactionType": "Interest",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "MSBNK",
+                                "securityType": "MMF"
+                            }
+                        ],
+                        "quantity": [
+                            "-1.89"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "MSBNK"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24121500388939?storeId=0"
+            },
+            {
+                "transactionId": "24121500388937",
+                "accountId": "133282028",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "48.84",
+                "description": "GLOBAL X RUSSELL 2000 COV CL",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "RYLD",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "RYLD"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24121500388937?storeId=0"
+            },
+            {
+                "transactionId": "24121500388936",
+                "accountId": "133282028",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "34.04",
+                "description": "GLOBAL X S&P 500 COVE CALL E",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "XYLD",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "XYLD"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24121500388936?storeId=0"
+            },
+            {
+                "transactionId": "24121500388935",
+                "accountId": "133282028",
+                "transactionDate": "1714460400000",
+                "postDate": "1714460400000",
+                "amount": "44",
+                "description": "CHIMERA INVESTMENT CORPORATION REC 04/30/24 PAY 04/30/24 RATE 0.00000000 QTY 0.00000000",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "CIM",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "CIM"
+                        ],
+                        "settlementDate": [
+                            "1714460400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24121500388935?storeId=0"
+            },
+            {
+                "transactionId": "24121500388934",
+                "accountId": "133282028",
+                "transactionDate": "1714517033000",
+                "postDate": "1714633200000",
+                "amount": "-2614",
+                "description": "SOUTHWEST AIRLINES UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "LUV",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "100"
+                        ],
+                        "price": [
+                            "26.14"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "LUV"
+                        ],
+                        "settlementDate": [
+                            "1714633200000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24121500388934?storeId=0"
+            },
+            {
+                "transactionId": "24121500388933",
+                "accountId": "133282028",
+                "transactionDate": "1714517033000",
+                "postDate": "1714546800000",
+                "amount": "263.63",
+                "description": "CALL LUV 01/17/25 27.500",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "LUV",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "27.50"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "2.64"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "LUV Jan 17 '25 $27.50 Call"
+                        ],
+                        "settlementDate": [
+                            "1714546800000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24121500388933?storeId=0"
+            },
+            {
+                "transactionId": "24117500071970",
+                "accountId": "133282028",
+                "transactionDate": "1714161760000",
+                "postDate": "1714374000000",
+                "amount": "1344.62",
+                "description": "CALL ENPH 01/17/25 150.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ENPH",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "150.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "13.45"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.38"
+                        ],
+                        "displaySymbol": [
+                            "ENPH Jan 17 '25 $150 Call"
+                        ],
+                        "settlementDate": [
+                            "1714374000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24117500071970?storeId=0"
+            },
+            {
+                "transactionId": "24115500078044",
+                "accountId": "133282028",
+                "transactionDate": "1713994186000",
+                "postDate": "1714028400000",
+                "amount": "-85.36",
+                "description": "CALL ENPH 06/21/24 150.000",
+                "transactionType": "Bought To Cover",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ENPH",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "6",
+                                "expiryDay": "21",
+                                "strikePrice": "150.00"
+                            }
+                        ],
+                        "quantity": [
+                            "1"
+                        ],
+                        "price": [
+                            "0.85"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.36"
+                        ],
+                        "displaySymbol": [
+                            "ENPH Jun 21 '24 $150 Call"
+                        ],
+                        "settlementDate": [
+                            "1714028400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24115500078044?storeId=0"
+            },
+            {
+                "transactionId": "24114500067106",
+                "accountId": "133282028",
+                "transactionDate": "1713909834000",
+                "postDate": "1713942000000",
+                "amount": "564.63",
+                "description": "CALL BA 01/17/25 220.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "BA",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "220.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "5.65"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "BA Jan 17 '25 $220 Call"
+                        ],
+                        "settlementDate": [
+                            "1713942000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24114500067106?storeId=0"
+            },
+            {
+                "transactionId": "24114500067105",
+                "accountId": "133282028",
+                "transactionDate": "1713908799000",
+                "postDate": "1713942000000",
+                "amount": "-405.36",
+                "description": "CALL BA 01/17/25 230.000",
+                "transactionType": "Bought To Cover",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "BA",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "230.00"
+                            }
+                        ],
+                        "quantity": [
+                            "1"
+                        ],
+                        "price": [
+                            "4.05"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.36"
+                        ],
+                        "displaySymbol": [
+                            "BA Jan 17 '25 $230 Call"
+                        ],
+                        "settlementDate": [
+                            "1713942000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24114500067105?storeId=0"
+            },
+            {
+                "transactionId": "24113500074704",
+                "accountId": "133282028",
+                "transactionDate": "1713769200000",
+                "postDate": "1713510000000",
+                "amount": "0",
+                "description": "CALL DIS 04/19/24 100.000",
+                "transactionType": "Option Assignment",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "DIS",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "4",
+                                "expiryDay": "19",
+                                "strikePrice": "100.00"
+                            }
+                        ],
+                        "quantity": [
+                            "3"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "DIS Apr 19 '24 $100 Call"
+                        ],
+                        "settlementDate": [
+                            "1713510000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24113500074704?storeId=0"
+            },
+            {
+                "transactionId": "24113500074703",
+                "accountId": "133282028",
+                "transactionDate": "1713769200000",
+                "postDate": "1713510000000",
+                "amount": "0",
+                "description": "CALL PD 04/19/24 25.000",
+                "transactionType": "Option Expiration",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "PD",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "4",
+                                "expiryDay": "19",
+                                "strikePrice": "25.00"
+                            }
+                        ],
+                        "quantity": [
+                            "2"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "PD Apr 19 '24 $25 Call"
+                        ],
+                        "settlementDate": [
+                            "1713510000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24113500074703?storeId=0"
+            },
+            {
+                "transactionId": "24113500074702",
+                "accountId": "133282028",
+                "transactionDate": "1713769200000",
+                "postDate": "1713510000000",
+                "amount": "0",
+                "description": "PUT ENPH 04/19/24 100.000",
+                "transactionType": "Option Expiration",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ENPH",
+                                "securityType": "OPTN",
+                                "callPut": "PUT",
+                                "expiryYear": "24",
+                                "expiryMonth": "4",
+                                "expiryDay": "19",
+                                "strikePrice": "100.00"
+                            }
+                        ],
+                        "quantity": [
+                            "1"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "ENPH Apr 19 '24 $100 Put"
+                        ],
+                        "settlementDate": [
+                            "1713510000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24113500074702?storeId=0"
+            },
+            {
+                "transactionId": "24113500074701",
+                "accountId": "133282028",
+                "transactionDate": "1713769200000",
+                "postDate": "1713855600000",
+                "amount": "29999.71",
+                "description": "WALT DISNEY CO HLDG CO",
+                "transactionType": "Sold",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "DIS",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "-300"
+                        ],
+                        "price": [
+                            "100"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.24"
+                        ],
+                        "displaySymbol": [
+                            "DIS"
+                        ],
+                        "settlementDate": [
+                            "1713855600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24113500074701?storeId=0"
+            },
+            {
+                "transactionId": "24106500122699",
+                "accountId": "133282028",
+                "transactionDate": "1713164400000",
+                "postDate": "1713164400000",
+                "amount": "70",
+                "description": "FIFTH 3RD BANCORP OHIO REC 04/16/24 PAY 04/16/24 RATE 0.00000000 QTY 0.00000000",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "FITB",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "FITB"
+                        ],
+                        "settlementDate": [
+                            "1713164400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24106500122699?storeId=0"
+            },
+            {
+                "transactionId": "24103500076425",
+                "accountId": "133282028",
+                "transactionDate": "1712905200000",
+                "postDate": "1712905200000",
+                "amount": "69",
+                "description": "MEDTRONIC PLC SHS REC 04/12/24 PAY 04/12/24 RATE 0.00000000 QTY 0.00000000",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "MDT",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "MDT"
+                        ],
+                        "settlementDate": [
+                            "1712905200000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24103500076425?storeId=0"
+            },
+            {
+                "transactionId": "24102500104318",
+                "accountId": "133282028",
+                "transactionDate": "1712818800000",
+                "postDate": "1712818800000",
+                "amount": "19",
+                "description": "GLOBAL X SUPERDIVIDEND ETF",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "SDIV",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "SDIV"
+                        ],
+                        "settlementDate": [
+                            "1712818800000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24102500104318?storeId=0"
+            },
+            {
+                "transactionId": "24100500076990",
+                "accountId": "133282028",
+                "transactionDate": "1712702377000",
+                "postDate": "1712818800000",
+                "amount": "-11798",
+                "description": "WALT DISNEY CO HLDG CO UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "DIS",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "100"
+                        ],
+                        "price": [
+                            "117.98"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "DIS"
+                        ],
+                        "settlementDate": [
+                            "1712818800000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24100500076990?storeId=0"
+            },
+            {
+                "transactionId": "24100500076989",
+                "accountId": "133282028",
+                "transactionDate": "1712702377000",
+                "postDate": "1712732400000",
+                "amount": "1217.63",
+                "description": "CALL DIS 01/17/25 120.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "DIS",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "120.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "12.18"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "DIS Jan 17 '25 $120 Call"
+                        ],
+                        "settlementDate": [
+                            "1712732400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24100500076989?storeId=0"
+            },
+            {
+                "transactionId": "24100500076988",
+                "accountId": "133282028",
+                "transactionDate": "1712687705000",
+                "postDate": "1712732400000",
+                "amount": "614.63",
+                "description": "PUT NVDA 09/20/24 500.000",
+                "transactionType": "Sold To Close",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "NVDA",
+                                "securityType": "OPTN",
+                                "callPut": "PUT",
+                                "expiryYear": "24",
+                                "expiryMonth": "9",
+                                "expiryDay": "20",
+                                "strikePrice": "500.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "6.15"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "NVDA Sep 20 '24 $500 Put"
+                        ],
+                        "settlementDate": [
+                            "1712732400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24100500076988?storeId=0"
+            },
+            {
+                "transactionId": "24096500149238",
+                "accountId": "133282028",
+                "transactionDate": "1712350634000",
+                "postDate": "1712559600000",
+                "amount": "1415.62",
+                "description": "CALL ABBV 01/17/25 170.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ABBV",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "170.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "14.16"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.38"
+                        ],
+                        "displaySymbol": [
+                            "ABBV Jan 17 '25 $170 Call"
+                        ],
+                        "settlementDate": [
+                            "1712559600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24096500149238?storeId=0"
+            },
+            {
+                "transactionId": "24096500149237",
+                "accountId": "133282028",
+                "transactionDate": "1712350634000",
+                "postDate": "1712646000000",
+                "amount": "-17002",
+                "description": "ABBVIE INC COM UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ABBV",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "100"
+                        ],
+                        "price": [
+                            "170.02"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "ABBV"
+                        ],
+                        "settlementDate": [
+                            "1712646000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24096500149237?storeId=0"
+            },
+            {
+                "transactionId": "24096500149236",
+                "accountId": "133282028",
+                "transactionDate": "1712350316000",
+                "postDate": "1712646000000",
+                "amount": "-16180",
+                "description": "AIRBNB INC CL A UNSOLICITED TRADE",
+                "transactionType": "Bought",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ABNB",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "100"
+                        ],
+                        "price": [
+                            "161.8"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "ABNB"
+                        ],
+                        "settlementDate": [
+                            "1712646000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24096500149236?storeId=0"
+            },
+            {
+                "transactionId": "24096500149235",
+                "accountId": "133282028",
+                "transactionDate": "1712350316000",
+                "postDate": "1712559600000",
+                "amount": "2422.62",
+                "description": "CALL ABNB 01/17/25 165.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ABNB",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "25",
+                                "expiryMonth": "1",
+                                "expiryDay": "17",
+                                "strikePrice": "165.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "24.23"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.38"
+                        ],
+                        "displaySymbol": [
+                            "ABNB Jan 17 '25 $165 Call"
+                        ],
+                        "settlementDate": [
+                            "1712559600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24096500149235?storeId=0"
+            },
+            {
+                "transactionId": "24096500149234",
+                "accountId": "133282028",
+                "transactionDate": "1712349644000",
+                "postDate": "1712559600000",
+                "amount": "-126.36",
+                "description": "CALL ENPH 04/19/24 130.000",
+                "transactionType": "Bought To Cover",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ENPH",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "4",
+                                "expiryDay": "19",
+                                "strikePrice": "130.00"
+                            }
+                        ],
+                        "quantity": [
+                            "1"
+                        ],
+                        "price": [
+                            "1.26"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.36"
+                        ],
+                        "displaySymbol": [
+                            "ENPH Apr 19 '24 $130 Call"
+                        ],
+                        "settlementDate": [
+                            "1712559600000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24096500149234?storeId=0"
+            },
+            {
+                "transactionId": "24095500134756",
+                "accountId": "133282028",
+                "transactionDate": "1712214000000",
+                "postDate": "1712214000000",
+                "amount": "34.52",
+                "description": "JPMORGAN EQUITY PREMIUM INCO",
+                "transactionType": "Dividend",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "JEPI",
+                                "securityType": "EQ"
+                            }
+                        ],
+                        "quantity": [
+                            "0"
+                        ],
+                        "price": [
+                            "0"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0"
+                        ],
+                        "displaySymbol": [
+                            "JEPI"
+                        ],
+                        "settlementDate": [
+                            "1712214000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24095500134756?storeId=0"
+            },
+            {
+                "transactionId": "24095500134754",
+                "accountId": "133282028",
+                "transactionDate": "1712267719000",
+                "postDate": "1712300400000",
+                "amount": "39.63",
+                "description": "PUT ENPH 04/19/24 100.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ENPH",
+                                "securityType": "OPTN",
+                                "callPut": "PUT",
+                                "expiryYear": "24",
+                                "expiryMonth": "4",
+                                "expiryDay": "19",
+                                "strikePrice": "100.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "0.4"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "ENPH Apr 19 '24 $100 Put"
+                        ],
+                        "settlementDate": [
+                            "1712300400000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24095500134754?storeId=0"
+            },
+            {
+                "transactionId": "24094500106500",
+                "accountId": "133282028",
+                "transactionDate": "1712185090000",
+                "postDate": "1712214000000",
+                "amount": "243.63",
+                "description": "CALL XOM 06/21/24 125.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "XOM",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "6",
+                                "expiryDay": "21",
+                                "strikePrice": "125.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "2.44"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "XOM Jun 21 '24 $125 Call"
+                        ],
+                        "settlementDate": [
+                            "1712214000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24094500106500?storeId=0"
+            },
+            {
+                "transactionId": "24094500106499",
+                "accountId": "133282028",
+                "transactionDate": "1712184921000",
+                "postDate": "1712214000000",
+                "amount": "354.63",
+                "description": "CALL ENPH 06/21/24 160.000",
+                "transactionType": "Sold To Close",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ENPH",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "6",
+                                "expiryDay": "21",
+                                "strikePrice": "160.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "3.55"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "ENPH Jun 21 '24 $160 Call"
+                        ],
+                        "settlementDate": [
+                            "1712214000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24094500106499?storeId=0"
+            },
+            {
+                "transactionId": "24094500106498",
+                "accountId": "133282028",
+                "transactionDate": "1712183303000",
+                "postDate": "1712214000000",
+                "amount": "188.63",
+                "description": "CALL ENPH 04/19/24 130.000",
+                "transactionType": "Sold Short",
+                "memo": "",
+                "imageFlag": false,
+                "instType": "BROKERAGE",
+                "storeId": "0",
+                "brokerage": [
+                    {
+                        "product": [
+                            {
+                                "symbol": "ENPH",
+                                "securityType": "OPTN",
+                                "callPut": "CALL",
+                                "expiryYear": "24",
+                                "expiryMonth": "4",
+                                "expiryDay": "19",
+                                "strikePrice": "130.00"
+                            }
+                        ],
+                        "quantity": [
+                            "-1"
+                        ],
+                        "price": [
+                            "1.89"
+                        ],
+                        "settlementCurrency": [
+                            "USD"
+                        ],
+                        "paymentCurrency": [
+                            "USD"
+                        ],
+                        "fee": [
+                            "0.37"
+                        ],
+                        "displaySymbol": [
+                            "ENPH Apr 19 '24 $130 Call"
+                        ],
+                        "settlementDate": [
+                            "1712214000000"
+                        ]
+                    }
+                ],
+                "detailsURI": "https://api.etrade.com/v1/accounts/dXfPDObhx71UJAqQI63hrw/transactions/24094500106498?storeId=0"
+            }
+        ],
+        []
+    ]
+}

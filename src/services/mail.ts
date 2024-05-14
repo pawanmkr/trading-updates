@@ -1,8 +1,8 @@
 import * as nodemailer from 'nodemailer';
 import { configDotenv } from "dotenv";
-
 configDotenv();
 
+// Send an email with a WAV file attachment
 export async function sendEmail(
     receiver: string,
     subject: string,

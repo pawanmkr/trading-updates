@@ -24,8 +24,12 @@ export default async function tts(text: string): Promise<string> {
                     console.log("\nSynthesis finished.\n");
                     resolve(outputPath);
                 } else {
-                    reject(new Error("Speech synthesis canceled. " + result.errorDetails +
-                        "\nDid you set the speech resource key and region values?"));
+                    reject(
+                        new Error(
+                            "Speech synthesis canceled. " + result.errorDetails +
+                            "\nDid you set the speech resource key and region values?"
+                        )
+                    );
                 }
             }, (error) => {
                 reject(error);

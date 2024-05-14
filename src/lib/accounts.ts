@@ -15,9 +15,10 @@ import {
     Transaction,
 } from "./account-helper.js";
 import pf from "./portfolio.js";
-// import prepareMessage from "../utils/message.js";
+import prepareMessage from "../utils/message.js";
 import tts from "../services/tts.js";
 import { sendEmail } from "../services/mail.js";
+import fs from 'fs';
 
 
 configDotenv();
@@ -171,12 +172,12 @@ export class EtradeAccount {
         });
     }
 
-    async getTransactions(accountIdKey: string): Promise<Transaction[]> {
+    async getTransactions(accountIdKey: string): Promise<Transaction[] | null> {
         return new Promise((resolve, reject) => {
             oauthClient.get(
                 `
                     https://api.etrade.com/v1/accounts/${accountIdKey}/transactions?
-                    fromDate=01012024&endDate=${dayjs().format("MMDDYYYY")}
+                    fromDate=04012024&endDate=${dayjs().format("MMDDYYYY")}
                 `,
                 this.accessToken,
                 this.accessTokenSecret,
@@ -186,14 +187,14 @@ export class EtradeAccount {
                         console.error(err);
                         reject(err);
                     } else {
-                        try {
-                            const transactions = await parseTransactionsResponseXmlToJson(
-                                result as string
-                            );
-                            resolve(transactions);
-                        } catch (parseError) {
-                            console.error("\nError parsing transaction list", parseError);
-                            reject(parseError);
+                        if (response.statusCode === 200) {
+                            try {
+                                const transactions = await parseTransactionsResponseXmlToJson(result as string);
+                                resolve(transactions);
+                            } catch (parseError) {
+                                console.error("\nError parsing transaction list", parseError);
+                                reject(parseError);
+                            }
                         }
                     }
                 }
@@ -209,6 +210,7 @@ export class EtradeAccount {
             promises.push(await this.getTransactions(account.accountIdKey));
         }
         const txnsFromAllAccounts = await Promise.all(promises);
+        console.log(util.inspect(txnsFromAllAccounts, true, null, true));
 
         if (!txnsFromAllAccounts || txnsFromAllAccounts.length === 0) {
             console.log(txnsFromAllAccounts);
@@ -216,6 +218,19 @@ export class EtradeAccount {
             return;
         }
         if (txnsFromAllAccounts) {
+            console.log(util.inspect(txnsFromAllAccounts, true, null, true));
+
+            const data = JSON.stringify(txnsFromAllAccounts);
+            const filePath = 'transactions_onemonth.json';
+
+            fs.writeFile(filePath, data, (err) => {
+                if (err) {
+                    console.error('Error writing file:', err);
+                    return;
+                }
+                console.log('Array data written to file successfully!');
+            });
+
             txnsFromAllAccounts.forEach(txns => {
                 txns.forEach(txn => {
                     pf.trades.annual.total += 1;
@@ -512,7 +527,7 @@ export class EtradeAccount {
 
         await this.dailyOrders(accounts);
 
-        await this.calcuateTrades(accounts);
+        // await this.calcuateTrades(accounts);
     }
 }
 
@@ -524,18 +539,19 @@ export class EtradeAccount {
         const accounts = await et.listAccounts();
         if (accounts && accounts.length > 0) {
             await et.constructPortfolio(accounts);
+            console.log("\n here --------> ")
             console.log(util.inspect(pf, false, null, true));
 
-            // const message = prepareMessage(pf);
-            // console.log("Message", message);
+            const message = prepareMessage(pf);
+            console.log(message);
 
-            // const audioMessagePath = await tts(message);
-            // await sendEmail(
-            //     "iampawanmkr@gmail.com", // dhaval_p_shah@yahoo.com
-            //     "Daily Updates",
-            //     "Please listen to the audio for details.",
-            //     audioMessagePath
-            // );
+            const audioMessagePath = await tts(message);
+            await sendEmail(
+                "iampawanmkr@gmail.com", // dhaval_p_shah@yahoo.com
+                "Daily Updates",
+                "Please listen to the audio for details.",
+                audioMessagePath
+            );
         }
     } catch (error) {
         console.error(error);

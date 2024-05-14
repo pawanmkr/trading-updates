@@ -48,45 +48,46 @@ export function parseEtradeXmlAccountList(xmlData: string): Promise<Account[]> {
     });
 }
 
+
 export interface BalanceResponse {
-    accountId: string;
-    accountType: string;
-    optionLevel: string;
-    accountDescription: string;
-    quoteMode: string;
-    dayTraderStatus: string;
-    accountMode: string;
-    Cash: {
-        fundsForOpenOrdersCash: string;
-        moneyMktBalance: string;
+    accountId?: string;
+    accountType?: string;
+    optionLevel?: string;
+    accountDescription?: string;
+    quoteMode?: string;
+    dayTraderStatus?: string;
+    accountMode?: string;
+    Cash?: {
+        fundsForOpenOrdersCash?: string;
+        moneyMktBalance?: string;
     };
-    Computed: {
-        cashAvailableForInvestment: string;
-        cashAvailableForWithdrawal: string;
-        totalAvailableForWithdrawal: string;
-        netCash: string;
-        cashBalance: string;
-        settledCashForInvestment: string;
-        unSettledCashForInvestment: string;
-        fundsWithheldFromPurchasePower: string;
-        fundsWithheldFromWithdrawal: string;
-        marginBuyingPower: string;
-        cashBuyingPower: string;
-        dtMarginBuyingPower: string;
-        dtCashBuyingPower: string;
-        shortAdjustBalance: string;
-        accountBalance: string;
-        OpenCalls: {
-            minEquityCall: string;
-            fedCall: string;
-            cashCall: string;
-            houseCall: string;
+    Computed?: {
+        cashAvailableForInvestment?: string;
+        cashAvailableForWithdrawal?: string;
+        totalAvailableForWithdrawal?: string;
+        netCash?: string;
+        cashBalance?: string;
+        settledCashForInvestment?: string;
+        unSettledCashForInvestment?: string;
+        fundsWithheldFromPurchasePower?: string;
+        fundsWithheldFromWithdrawal?: string;
+        marginBuyingPower?: string;
+        cashBuyingPower?: string;
+        dtMarginBuyingPower?: string;
+        dtCashBuyingPower?: string;
+        shortAdjustBalance?: string;
+        accountBalance?: string;
+        OpenCalls?: {
+            minEquityCall?: string;
+            fedCall?: string;
+            cashCall?: string;
+            houseCall?: string;
         };
-        RealTimeValues: {
-            totalAccountValue: string;
-            netMv: string;
-            netMvLong: string;
-            netMvShort: string;
+        RealTimeValues?: {
+            totalAccountValue?: string;
+            netMv?: string;
+            netMvLong?: string;
+            netMvShort?: string;
         };
     };
 }
@@ -102,64 +103,66 @@ export async function parseBalanceResponseXmlToJson(
             } else {
                 try {
                     const balanceResponse: BalanceResponse = {
-                        accountId: result.BalanceResponse.accountId[0],
-                        accountType: result.BalanceResponse.accountType[0],
-                        optionLevel: result.BalanceResponse.optionLevel[0],
-                        accountDescription: result.BalanceResponse.accountDescription[0],
-                        quoteMode: result.BalanceResponse.quoteMode[0],
-                        dayTraderStatus: result.BalanceResponse.dayTraderStatus[0],
-                        accountMode: result.BalanceResponse.accountMode[0],
+                        accountId: result?.BalanceResponse?.accountId?.[0],
+                        accountType: result?.BalanceResponse?.accountType?.[0],
+                        optionLevel: result?.BalanceResponse?.optionLevel?.[0],
+                        accountDescription: result?.BalanceResponse?.accountDescription?.[0],
+                        quoteMode: result?.BalanceResponse?.quoteMode?.[0],
+                        dayTraderStatus: result?.BalanceResponse?.dayTraderStatus?.[0],
+                        accountMode: result?.BalanceResponse?.accountMode?.[0],
                         Cash: {
                             fundsForOpenOrdersCash:
-                                result.BalanceResponse.Cash[0]?.fundsForOpenOrdersCash[0],
-                            moneyMktBalance: result.BalanceResponse.Cash[0]?.moneyMktBalance[0],
+                                result?.BalanceResponse?.Cash?.[0]?.fundsForOpenOrdersCash?.[0],
+                            moneyMktBalance: result?.BalanceResponse?.Cash?.[0]?.moneyMktBalance?.[0],
                         },
                         Computed: {
                             cashAvailableForInvestment:
-                                result.BalanceResponse.Computed[0]?.cashAvailableForInvestment[0],
+                                result?.BalanceResponse?.Computed?.[0]?.cashAvailableForInvestment?.[0],
                             cashAvailableForWithdrawal:
-                                result.BalanceResponse.Computed[0]?.cashAvailableForWithdrawal[0],
+                                result?.BalanceResponse?.Computed?.[0]?.cashAvailableForWithdrawal?.[0],
                             totalAvailableForWithdrawal:
-                                result.BalanceResponse.Computed[0]?.totalAvailableForWithdrawal[0],
-                            netCash: result.BalanceResponse.Computed[0]?.netCash[0],
-                            cashBalance: result.BalanceResponse.Computed[0]?.cashBalance[0],
+                                result?.BalanceResponse?.Computed?.[0]?.totalAvailableForWithdrawal?.[0],
+                            netCash: result?.BalanceResponse?.Computed?.[0]?.netCash?.[0],
+                            cashBalance: result?.BalanceResponse?.Computed?.[0]?.cashBalance?.[0],
                             settledCashForInvestment:
-                                result.BalanceResponse.Computed[0]?.settledCashForInvestment[0],
+                                result?.BalanceResponse?.Computed?.[0]?.settledCashForInvestment?.[0],
                             unSettledCashForInvestment:
-                                result.BalanceResponse.Computed[0]?.unSettledCashForInvestment[0],
+                                result?.BalanceResponse?.Computed?.[0]?.unSettledCashForInvestment?.[0],
                             fundsWithheldFromPurchasePower:
-                                result.BalanceResponse.Computed[0]
-                                    .fundsWithheldFromPurchasePower[0],
+                                result?.BalanceResponse?.Computed?.[0]?.fundsWithheldFromPurchasePower?.[0],
                             fundsWithheldFromWithdrawal:
-                                result.BalanceResponse.Computed[0]?.fundsWithheldFromWithdrawal[0],
+                                result?.BalanceResponse?.Computed?.[0]?.fundsWithheldFromWithdrawal?.[0],
                             marginBuyingPower:
-                                result.BalanceResponse.Computed[0]?.marginBuyingPower[0],
+                                result?.BalanceResponse?.Computed?.[0]?.marginBuyingPower?.[0],
                             cashBuyingPower:
-                                result.BalanceResponse.Computed[0]?.cashBuyingPower[0],
+                                result?.BalanceResponse?.Computed?.[0]?.cashBuyingPower?.[0],
                             dtMarginBuyingPower:
-                                result.BalanceResponse.Computed[0]?.dtMarginBuyingPower[0],
+                                result?.BalanceResponse?.Computed?.[0]?.dtMarginBuyingPower?.[0],
                             dtCashBuyingPower:
-                                result.BalanceResponse.Computed[0]?.dtCashBuyingPower[0],
+                                result?.BalanceResponse?.Computed?.[0]?.dtCashBuyingPower?.[0],
                             shortAdjustBalance:
-                                result.BalanceResponse.Computed[0]?.shortAdjustBalance[0],
+                                result?.BalanceResponse?.Computed?.[0]?.shortAdjustBalance?.[0],
                             accountBalance:
-                                result.BalanceResponse.Computed[0]?.accountBalance[0],
+                                result?.BalanceResponse?.Computed?.[0]?.accountBalance?.[0],
                             OpenCalls: {
                                 minEquityCall:
-                                    result.BalanceResponse.Computed[0]?.OpenCalls[0]?.minEquityCall[0],
-                                fedCall: result.BalanceResponse.Computed[0]?.OpenCalls[0]?.fedCall[0],
-                                cashCall: result.BalanceResponse.Computed[0]?.OpenCalls[0]?.cashCall[0],
-                                houseCall: result.BalanceResponse.Computed[0]?.OpenCalls[0]?.houseCall[0],
+                                    result?.BalanceResponse?.Computed?.[0]?.OpenCalls?.[0]?.minEquityCall?.[0],
+                                fedCall:
+                                    result?.BalanceResponse?.Computed?.[0]?.OpenCalls?.[0]?.fedCall?.[0],
+                                cashCall:
+                                    result?.BalanceResponse?.Computed?.[0]?.OpenCalls?.[0]?.cashCall?.[0],
+                                houseCall:
+                                    result?.BalanceResponse?.Computed?.[0]?.OpenCalls?.[0]?.houseCall?.[0],
                             },
                             RealTimeValues: {
                                 totalAccountValue:
-                                    result.BalanceResponse.Computed[0]?.RealTimeValues[0]
-                                        .totalAccountValue[0],
-                                netMv: result.BalanceResponse.Computed[0]?.RealTimeValues[0]?.netMv[0],
+                                    result?.BalanceResponse?.Computed?.[0]?.RealTimeValues?.[0]?.totalAccountValue?.[0],
+                                netMv:
+                                    result?.BalanceResponse?.Computed?.[0]?.RealTimeValues?.[0]?.netMv?.[0],
                                 netMvLong:
-                                    result.BalanceResponse.Computed[0]?.RealTimeValues[0]?.netMvLong[0],
+                                    result?.BalanceResponse?.Computed?.[0]?.RealTimeValues?.[0]?.netMvLong?.[0],
                                 netMvShort:
-                                    result.BalanceResponse.Computed[0]?.RealTimeValues[0]?.netMvShort[0],
+                                    result?.BalanceResponse?.Computed?.[0]?.RealTimeValues?.[0]?.netMvShort?.[0],
                             },
                         },
                     };
@@ -174,6 +177,7 @@ export async function parseBalanceResponseXmlToJson(
         });
     });
 }
+
 
 interface Product {
     symbol: string;
@@ -506,56 +510,61 @@ export function parseTransactionsResponseXmlToJson(xmlData): Promise<Transaction
                 reject(err);
             } else {
                 const transactions: Transaction[] = [];
-                result.TransactionListResponse.Transaction.forEach((transaction: Transaction) => {
-                    try {
-                        if (transaction.brokerage[0].product[0].securityType === undefined) {
-                            // console.log(util.inspect(transaction, false, null, true /* enable colors */));
-                            console.log("Skipping transaction with no product data");
-                        }
-                        else {
-                            transactions.push({
-                                transactionId: transaction.transactionId[0],
-                                accountId: transaction.accountId[0],
-                                transactionDate: transaction.transactionDate[0],
-                                postDate: transaction.postDate[0],
-                                amount: transaction.amount[0],
-                                description: transaction.description[0],
-                                transactionType: transaction.transactionType[0],
-                                memo: transaction.memo[0],
-                                imageFlag: transaction.imageFlag[0] === "true",
-                                instType: transaction.instType[0],
-                                storeId: transaction.storeId[0],
-                                brokerage: transaction.brokerage.map((brokerage: Brokerage) => ({
-                                    product: brokerage.product.map((product: Product) => ({
-                                        symbol: product.symbol[0],
-                                        securityType: product.securityType[0],
-                                        callPut: product.callPut ? product.callPut[0] : undefined,
-                                        expiryYear: product.expiryYear ? product.expiryYear[0] : undefined,
-                                        expiryMonth: product.expiryMonth ? product.expiryMonth[0] : undefined,
-                                        expiryDay: product.expiryDay ? product.expiryDay[0] : undefined,
-                                        strikePrice: product.strikePrice ? product.strikePrice[0] : undefined,
-                                        productId: product.productId ? product.productId.map((id: any) => ({
-                                            symbol: id.symbol[0],
-                                            typeCode: id.typeCode[0],
-                                        })) : undefined,
+                try {
+                    result.TransactionListResponse.Transaction.forEach((transaction: Transaction) => {
+                        try {
+                            if (transaction.brokerage[0].product[0].securityType === undefined) {
+                                // console.log(util.inspect(transaction, false, null, true /* enable colors */));
+                                console.log("Skipping transaction with no product data");
+                            }
+                            else {
+                                transactions.push({
+                                    transactionId: transaction.transactionId[0],
+                                    accountId: transaction.accountId[0],
+                                    transactionDate: transaction.transactionDate[0],
+                                    postDate: transaction.postDate[0],
+                                    amount: transaction.amount[0],
+                                    description: transaction.description[0],
+                                    transactionType: transaction.transactionType[0],
+                                    memo: transaction.memo[0],
+                                    imageFlag: transaction.imageFlag[0] === "true",
+                                    instType: transaction.instType[0],
+                                    storeId: transaction.storeId[0],
+                                    brokerage: transaction.brokerage.map((brokerage: Brokerage) => ({
+                                        product: brokerage.product.map((product: Product) => ({
+                                            symbol: product.symbol[0],
+                                            securityType: product.securityType[0],
+                                            callPut: product.callPut ? product.callPut[0] : undefined,
+                                            expiryYear: product.expiryYear ? product.expiryYear[0] : undefined,
+                                            expiryMonth: product.expiryMonth ? product.expiryMonth[0] : undefined,
+                                            expiryDay: product.expiryDay ? product.expiryDay[0] : undefined,
+                                            strikePrice: product.strikePrice ? product.strikePrice[0] : undefined,
+                                            productId: product.productId ? product.productId.map((id: any) => ({
+                                                symbol: id.symbol[0],
+                                                typeCode: id.typeCode[0],
+                                            })) : undefined,
+                                        })),
+                                        quantity: brokerage.quantity,
+                                        price: brokerage.price,
+                                        settlementCurrency: brokerage.settlementCurrency,
+                                        paymentCurrency: brokerage.paymentCurrency,
+                                        fee: brokerage.fee,
+                                        displaySymbol: brokerage.displaySymbol,
+                                        settlementDate: brokerage.settlementDate,
                                     })),
-                                    quantity: brokerage.quantity,
-                                    price: brokerage.price,
-                                    settlementCurrency: brokerage.settlementCurrency,
-                                    paymentCurrency: brokerage.paymentCurrency,
-                                    fee: brokerage.fee,
-                                    displaySymbol: brokerage.displaySymbol,
-                                    settlementDate: brokerage.settlementDate,
-                                })),
-                                detailsURI: transaction.detailsURI[0],
-                            });
+                                    detailsURI: transaction.detailsURI[0],
+                                });
+                            }
+                        } catch (error) {
+                            console.error(error);
+                            console.log(util.inspect(transaction, false, null, true /* enable colors */));
                         }
-                    } catch (error) {
-                        console.error(error);
-                        console.log(util.inspect(transaction, false, null, true /* enable colors */));
-                    }
-                });
-                resolve(transactions);
+                    });
+                    resolve(transactions);
+                } catch (error) {
+                    console.log(util.inspect(result, true, null, true));
+                    reject(error);
+                }
             }
         })
     });
